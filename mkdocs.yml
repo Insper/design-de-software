@@ -1,0 +1,80 @@
+site_name: Design de Software - Insper 2020/2
+site_author: Andrew Kurauchi, Lucianos Soares
+
+extra:
+    materia: Design de Software
+    professor: Andrew Kurauchi, Luciano Soares
+    semestre: 2020/2
+
+theme:
+  feature:
+    tabs: true
+  name: 'material'
+  palette:
+      primary: 'grey'
+      accent: 'red'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  custom_dir: 'custom_theme'
+
+docs_dir: material
+site_dir: docs
+
+site_url: https://insper.github.io/design-de-software/
+
+
+nav:
+    - Home: index.md
+    - Turmas:
+        - 'Turma A': turma-a.md
+        - 'Turma B': turma-b.md
+        - 'Turma C': turma-c.md
+    - Aulas:
+        - '02 - Input e String': aulas/02-io.md
+
+extra_javascript:
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
+    - translate-admonitions.js
+
+extra_css:
+    - css/printing.css
+    - css/dessoft.css
+
+markdown_extensions:
+  - markdown.extensions.tables
+  - tables
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.attr_list
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      base_path: material/aulas
+      check_paths: true
+plugins:
+    - search
