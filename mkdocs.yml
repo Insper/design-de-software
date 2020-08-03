@@ -11,8 +11,8 @@ theme:
     tabs: true
   name: 'material'
   palette:
-      primary: 'red'
-      accent: 'deep orange'
+      primary: 'indigo'
+      accent: 'blue'
   font:
     text: Roboto
     code: Roboto Mono
