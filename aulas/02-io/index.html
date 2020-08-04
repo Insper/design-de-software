@@ -1,0 +1,1119 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/02-io/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>02 - Input e String - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02-input-e-string" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              02 - Input e String
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        02 - Input e String
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="02 - Input e String" class="md-nav__link md-nav__link--active">
+      02 - Input e String
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relembrando-a-aula-passada" class="md-nav__link">
+    Relembrando a aula passada...
+  </a>
+  
+    <nav class="md-nav" aria-label="Relembrando a aula passada...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    Exercício 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    Exercícios adicionais
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedindo-dados-para-o-usuario" class="md-nav__link">
+    Pedindo dados para o usuário
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praticando-o-uso-do-input" class="md-nav__link">
+    Praticando o uso do input
+  </a>
+  
+    <nav class="md-nav" aria-label="Praticando o uso do input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-dados-em-python" class="md-nav__link">
+    Tipos de dados em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de dados em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3-conversao-entre-tipos" class="md-nav__link">
+    EXERCÍCIO 3: Conversão entre tipos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-adicional" class="md-nav__link">
+    Exercício adicional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4-agora-vai" class="md-nav__link">
+    EXERCÍCIO 4: Agora vai!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacao-de-strings" class="md-nav__link">
+    Formatação de strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação de strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-com-strings" class="md-nav__link">
+    Operações com strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações com strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais_1" class="md-nav__link">
+    Exercícios adicionais
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio" class="md-nav__link">
+    Desafio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relembrando-a-aula-passada" class="md-nav__link">
+    Relembrando a aula passada...
+  </a>
+  
+    <nav class="md-nav" aria-label="Relembrando a aula passada...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    Exercício 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    Exercícios adicionais
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pedindo-dados-para-o-usuario" class="md-nav__link">
+    Pedindo dados para o usuário
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#praticando-o-uso-do-input" class="md-nav__link">
+    Praticando o uso do input
+  </a>
+  
+    <nav class="md-nav" aria-label="Praticando o uso do input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-dados-em-python" class="md-nav__link">
+    Tipos de dados em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de dados em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3-conversao-entre-tipos" class="md-nav__link">
+    EXERCÍCIO 3: Conversão entre tipos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-adicional" class="md-nav__link">
+    Exercício adicional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4-agora-vai" class="md-nav__link">
+    EXERCÍCIO 4: Agora vai!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatacao-de-strings" class="md-nav__link">
+    Formatação de strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação de strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-com-strings" class="md-nav__link">
+    Operações com strings
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações com strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais_1" class="md-nav__link">
+    Exercícios adicionais
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desafio" class="md-nav__link">
+    Desafio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="02-input-e-string">02 - Input e String<a class="headerlink" href="#02-input-e-string" title="Permanent link">&para;</a></h1>
+<h2 id="relembrando-a-aula-passada">Relembrando a aula passada...<a class="headerlink" href="#relembrando-a-aula-passada" title="Permanent link">&para;</a></h2>
+<p>Vamos começar relembrando o que aprendemos na aula passada com um exercício.</p>
+<div class="admonition example">
+<h3 id="exercicio-1">Exercício 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Faça uma função que recebe um número e calcula:</p>
+<div>
+<div class="MathJax_Preview">f(x) = (-1)^x</div>
+<script type="math/tex; mode=display">f(x) = (-1)^x</script>
+</div>
+<p>Para testar, faça um programa que chama a sua função com argumentos diferentes. Mesmo que você tenha certeza que o seu programa está funcionando, é importante testá-lo. Por exemplo, qual é o resultado de <span><span class="MathJax_Preview">f(0)</span><script type="math/tex">f(0)</script></span>? E <span><span class="MathJax_Preview">f(1)</span><script type="math/tex">f(1)</script></span>, <span><span class="MathJax_Preview">f(2)</span><script type="math/tex">f(2)</script></span>, <span><span class="MathJax_Preview">f(-1)</span><script type="math/tex">f(-1)</script></span>? Quantos testes você deve fazer para garantir que sua função está correta?</p>
+<p>Reflita: o que a sua função faz? Qual seria um nome melhor para esta função?</p>
+</div>
+<h3 id="exercicios-adicionais">Exercícios adicionais<a class="headerlink" href="#exercicios-adicionais" title="Permanent link">&para;</a></h3>
+<p>Caso você termine o programa acima antes da discussão com a sala, resolva os seguintes exercícios no <a href="http://softdes.insper.edu.br/">servidor</a>:</p>
+<ul>
+<li><a href="http://softdes.insper.edu.br/exercicio/8">Exercício 8: Movimento retilíneo uniforme</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/9">Exercício 9: Volume de uma esfera</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/14">Exercício 14: Lançamento de projétil</a></li>
+</ul>
+<h2 id="pedindo-dados-para-o-usuario">Pedindo dados para o usuário<a class="headerlink" href="#pedindo-dados-para-o-usuario" title="Permanent link">&para;</a></h2>
+<p>Até agora fizemos programas que, ao serem executados, sempre fazem exatamente a mesma coisa. Seria interessante permitir algum tipo de interação com o usuário. Por enquanto estamos desenvolvendo programas que imprimem valores no terminal, então também vamos utilizar o terminal para receber dados digitados pelo usuário.</p>
+<p>Em Python, a função <code class="highlight"><span class="nb">input</span><span class="p">()</span></code> pede um <strong>texto</strong> para o usuário e retorna este texto ao programa. Você pode, por exemplo, guardar esse texto em uma variável para usar em seguida. Teste o seguinte programa no seu computador:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pede a cor favorita para o usuário.</span>
+<span class="n">cor_favorita</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Qual a sua cor favorita? &#39;</span><span class="p">)</span>
+
+<span class="c1"># Imprime a cor favorita do usuário.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cor_favorita</span><span class="p">)</span>
+</code></pre></div>
+
+<p>O programa acima deve imprimir <code>Qual a sua cor favorita?</code> (note que existe um espaço após a interrogação) no terminal e parar. Nesse momento ele está esperando que o usuário digite algo no terminal. Até que isso aconteça, o programa fica parado na chamada da função <code class="highlight"><span class="nb">input</span><span class="p">()</span></code>.</p>
+<h2 id="praticando-o-uso-do-input">Praticando o uso do <code>input</code><a class="headerlink" href="#praticando-o-uso-do-input" title="Permanent link">&para;</a></h2>
+<p>Considere a seguinte função:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Função que soma dois números.</span>
+<span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">z</span>
+</code></pre></div>
+
+<p>Se criarmos um arquivo <code>.py</code> contendo somente esta função, o que você espera que aconteça? Rode seu programa. Ele fez o que você esperava?</p>
+<p>O programa acima não vai fazer nada. Nós só estamos <strong>definindo</strong> a função <code class="highlight"><span class="n">soma</span></code>, mas não estamos pedindo para o Python executá-la (ou seja, não estamos chamando a função). O programa a seguir deve imprimir a soma dos números 14 e 28:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Função que soma dois números.</span>
+<span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="c1"># Testando nossa função</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">soma</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Teste o programa acima e verifique se ele faz o que era esperado.</p>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Ao invés de deixarmos números fixos para testar a função, vamos perguntar para o usuário quais números ele quer somar. Teste o seguinte programa:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Função que soma dois números.</span>
+<span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="c1"># Lendo os dois números.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o primeiro número: &#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o segundo número: &#39;</span><span class="p">)</span>
+
+<span class="c1"># Somando os dois números.</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">soma</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Seu programa funcionou? Deu algum erro? Fez o que você esperava? Vamos tentar entender o que está acontecendo.</p>
+<p>Lembre-se que a função <code class="highlight"><span class="nb">input</span><span class="p">()</span></code> devolve o <strong>texto</strong> digitado pelo usuário. Na nossa soma, queremos adicionar <strong>números</strong>, não <strong>texto</strong>. Vamos tentar entender melhor o que está acontecendo.</p>
+</div>
+<h2 id="tipos-de-dados-em-python">Tipos de dados em Python<a class="headerlink" href="#tipos-de-dados-em-python" title="Permanent link">&para;</a></h2>
+<p>Vimos na aula passada que podemos guardar qualquer coisa em variáveis no Python. O que nós não discutimos foi que essas "coisas" que podemos guardar nas variáveis possuem tipos específicos. No início vamos trabalhar com 4 tipos básicos:</p>
+<ul>
+<li><strong>Inteiro (<code class="highlight"><span class="nb">int</span></code>)</strong>: um número sem casa decimal. Ex: <code class="highlight"><span class="mi">34</span></code>, <code class="highlight"><span class="mi">96</span></code>, <code class="highlight"><span class="o">-</span><span class="mi">123</span></code>, <code class="highlight"><span class="mi">45</span></code>;</li>
+<li><strong>Float (<code class="highlight"><span class="nb">float</span></code>)</strong>: um número real, com "ponto decimal" (também chamamos de "ponto flutuante"). Ex: <code class="highlight"><span class="mf">3.14</span></code>, <code class="highlight"><span class="o">-</span><span class="mf">25.1</span></code>, <code class="highlight"><span class="mf">5.0</span></code>, <code class="highlight"><span class="mf">5e-1</span></code>;</li>
+<li><strong>String (<code class="highlight"><span class="nb">str</span></code>)</strong>: texto puro (é representado necessariamente com aspas simples ou duplas). Ex: <code class="highlight"><span class="s2">&quot;Hello, world!&quot;</span></code>, <code class="highlight"><span class="s1">&#39;Insper&#39;</span></code>, <code class="highlight"><span class="s1">&#39;3.14&#39;</span></code>, <code class="highlight"><span class="s1">&#39;&quot;oi&quot;&#39;</span></code>;</li>
+<li><strong>Booleano (<code class="highlight"><span class="nb">bool</span></code>)</strong>: representam "verdadeiro" (<code class="highlight"><span class="kc">True</span></code>) e "falso" (<code class="highlight"><span class="kc">False</span></code>).</li>
+</ul>
+<div class="admonition example">
+<h3 id="exercicio-3-conversao-entre-tipos">EXERCÍCIO 3: Conversão entre tipos<a class="headerlink" href="#exercicio-3-conversao-entre-tipos" title="Permanent link">&para;</a></h3>
+<p>O Python disponibiliza algumas funções que convertem um valor de um tipo para outro. Teste o seguinte programa:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Converte para inteiro.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>
+
+<span class="c1"># Converte para float.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Converte para string.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+
+<span class="c1"># Converte de string para int.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">))</span>
+
+<span class="c1"># Converte de string para float.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1.625&#39;</span><span class="p">))</span>
+
+<span class="c1"># What ?!?</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Erros na execução</p>
+<p>Seu programa deve ter apresentado um erro parecido com o seguinte: <code class="highlight"><span class="ne">ValueError</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">convert</span> <span class="n">string</span> <span class="n">to</span> <span class="nb">float</span><span class="p">:</span> <span class="s1">&#39;banana&#39;</span></code>. Será <strong>muito</strong> comum encontrarmos erros em nosso programa. A primeira dica é: não entre em pânico. A segunda é: leia a mensagem de erro com atenção.</p>
+</div>
+</div>
+<h3 id="exercicio-adicional">Exercício adicional<a class="headerlink" href="#exercicio-adicional" title="Permanent link">&para;</a></h3>
+<p>O comando <code class="highlight"><span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span></code> gerou o número inteiro <code class="highlight"><span class="mi">3</span></code>. Mas será que ele arredondou o valor? Teste o comando <code class="highlight"><span class="nb">int</span><span class="p">(</span><span class="mf">2.718</span><span class="p">)</span></code>. Assumindo que a função <code class="highlight"><span class="nb">int</span><span class="p">()</span></code> arredonda o valor, o resultado esperado seria <code class="highlight"><span class="mi">3</span></code>. Rode seu programa. Qual foi o resultado? O que isso diz sobre a função <code class="highlight"><span class="nb">int</span></code>?</p>
+<div class="admonition example">
+<h3 id="exercicio-4-agora-vai">EXERCÍCIO 4: Agora vai!<a class="headerlink" href="#exercicio-4-agora-vai" title="Permanent link">&para;</a></h3>
+<p>Corrija o programa do exercício 3 sabendo que o <code class="highlight"><span class="nb">input</span><span class="p">()</span></code> <strong>sempre</strong> devolve uma <em>string</em>, ou seja, o texto digitado pelo usuário e a nossa função <code class="highlight"><span class="n">soma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></code> recebe dois <em>números</em>.</p>
+</div>
+<h2 id="formatacao-de-strings">Formatação de strings<a class="headerlink" href="#formatacao-de-strings" title="Permanent link">&para;</a></h2>
+<p>Na aula passada vimos que podemos formatar uma string utilizando a função <code class="highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code> para incluir os valores armazenados em variáveis. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;a vale </span><span class="si">{0}</span><span class="s1">, b vale </span><span class="si">{1}</span><span class="s1"> e a + b = </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Esse programa vai imprimir <code class="highlight"><span class="n">a</span> <span class="n">vale</span> <span class="mi">10</span><span class="p">,</span> <span class="n">b</span> <span class="n">vale</span> <span class="mi">7</span> <span class="n">e</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">17</span></code> no terminal. Agora, o que acontece se o valor da variável for um <code class="highlight"><span class="nb">float</span></code>? Teste o programa a seguir.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pi é </span><span class="si">{0}</span><span class="s1"> mais ou menos&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Quantas casas decimais do número pi foram apresentadas? E se quisermos mostrar apenas as 3 primeiras?</p>
+<p>Para isso podemos usar <a href="https://docs.python.org/3.7/library/string.html#formatspec">diretivas de formatação</a>, que podem ser especificadas com um "<code class="highlight"><span class="p">:</span></code>" (dois pontos) depois do índice. Por exemplo <code class="highlight"><span class="s1">&#39;</span><span class="si">{0:.1f}</span><span class="s1">, </span><span class="si">{1:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">1.23456</span><span class="p">,</span> <span class="mf">7.89123</span><span class="p">)</span></code> vai gerar a string <code class="highlight"><span class="s1">&#39;1.2, 7.8912&#39;</span></code>. Vamos por partes:</p>
+<p><img alt="Exemplo de formatação de strings" class="center" src="str_format.png" width="60%" /></p>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Modifique o programa que imprime o valor de pi para que ele mostre somente as 3 primeiras casas decimais.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Maneiras antigas de formatar strings em Python</p>
+<p>Se você procurar na internet por "formatação de strings em Python" ou algum termo análogo, é bastante provável que você encontre formas diferentes da que apresentamos acima. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Mateus&quot;</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Meu nome é </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">nome</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Não se preocupe se não entender esse trecho de código. Essa é a maneira antiga de formatar strings em Python. Procure utilizar a maneira nova que ensinamos, pois ela é mais flexível.</p>
+</div>
+<h2 id="operacoes-com-strings">Operações com strings<a class="headerlink" href="#operacoes-com-strings" title="Permanent link">&para;</a></h2>
+<p>No programa do <a href="#exercicio-2">exercício 2</a> nós obtivemos um comportamento diferente do que esperávamos (se precisar, execute o programa novamente para relembrar). Nessa versão do programa, se o usuário digitar <code class="highlight"><span class="mi">4</span></code> e <code class="highlight"><span class="mi">2</span></code> o programa vai imprimir que a soma vale <code class="highlight"><span class="mi">42</span></code>. Vimos que isso ocorre porque a função <code class="highlight"><span class="nb">input</span><span class="p">()</span></code> sempre devolve uma string, então o que o programa fez foi juntar a string <code class="highlight"><span class="s1">&#39;4&#39;</span></code> com a string <code class="highlight"><span class="s1">&#39;2&#39;</span></code>, obtendo a string <code class="highlight"><span class="s1">&#39;42&#39;</span></code>. Essa operação de "juntar strings" é o que chamamos de <strong>concatenação</strong>.</p>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Antes de executar o programa a seguir, reflita: o que você espera que seja a saída dele, ou seja, o que você espera que apareça no terminal? Depois que tiver sua hipótese, execute o programa.</p>
+<div class="highlight"><pre><span></span><code><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Ins&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">s1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Se o programa não fez o que você esperava, discuta com seus colegas. Se não conseguirem resolver, converse com algum dos professores.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>Vamos voltar por um instante para o contexto numérico. Sabe-se que uma multiplicação é equivalente à adição sucessiva de um mesmo número. Por exemplo: <code class="highlight"><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">12</span></code>. Sabendo disso e considerando o que acabamos de aprender sobre concatenação (<code class="highlight"><span class="o">+</span></code>) de strings, qual você espera que seja a saída do programa a seguir? Execute-o para validar sua hipótese.</p>
+<div class="highlight"><pre><span></span><code><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Ins&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;per&#39;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<h3 id="exercicios-adicionais_1">Exercícios adicionais<a class="headerlink" href="#exercicios-adicionais_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://softdes.insper.edu.br/exercicio/21">Exercício 21: Total em segundos</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/22">Exercício 22: Redução no tempo de vida de um fumante</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/59">Exercício 59: Repete asteriscos</a></li>
+</ul>
+<p>Se terminar os exercícios acima, faça os outros exercícios do servidor.</p>
+<h3 id="desafio">Desafio<a class="headerlink" href="#desafio" title="Permanent link">&para;</a></h3>
+<p>Faça um programa que pergunta ao usuário um numero n entre 1 e 20 e imprime um quadrado de asteriscos n x n. Exemplo de uso:</p>
+<div class="highlight"><pre><span></span><code>Digite n: 3
+
+***
+***
+***
+</code></pre></div>
+
+<p>Para cumprir essa missão você precisa saber que a string <code class="highlight"><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span></code> significa <em>"pule para a próxima linha"</em>. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc</span><span class="se">\n</span><span class="s2">de&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>imprime</p>
+<div class="highlight"><pre><span></span><code>abc
+de
+</code></pre></div>
+
+<h1 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://docs.python.org/3.7/tutorial/inputoutput.html">https://docs.python.org/3.7/tutorial/inputoutput.html</a></li>
+<li><a href="https://docs.python.org/3.7/library/string.html#formatspec">https://docs.python.org/3.7/library/string.html#formatspec</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../turma-c/" title="Turma C" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Turma C
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                03 - Desvios Condicionais (if)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

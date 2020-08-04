@@ -1,0 +1,1152 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/04-while/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>04 - Laços de Repetição (while) - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-lacos-de-repeticao-while" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              04 - Laços de Repetição (while)
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        04 - Laços de Repetição (while)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="04 - Laços de Repetição (while)" class="md-nav__link md-nav__link--active">
+      04 - Laços de Repetição (while)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aquecimento" class="md-nav__link">
+    Aquecimento
+  </a>
+  
+    <nav class="md-nav" aria-label="Aquecimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repetindo-o-if" class="md-nav__link">
+    Repetindo o if
+  </a>
+  
+    <nav class="md-nav" aria-label="Repetindo o if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    Exercício 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    Exercício 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-operador-while" class="md-nav__link">
+    O operador while
+  </a>
+  
+    <nav class="md-nav" aria-label="O operador while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alguns-padroes-de-uso-do-while" class="md-nav__link">
+    Alguns padrões de uso do while
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns padrões de uso do while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-de-uso-do-while-contagem" class="md-nav__link">
+    Padrões de uso do while: contagem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-de-uso-do-while-validacao" class="md-nav__link">
+    Padrões de uso do while: validação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-11" class="md-nav__link">
+    EXERCÍCIO 11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-12" class="md-nav__link">
+    EXERCÍCIO 12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-adicional-1" class="md-nav__link">
+    EXERCÍCIO ADICIONAL 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mais-exercicios-adicionais" class="md-nav__link">
+    MAIS EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aquecimento" class="md-nav__link">
+    Aquecimento
+  </a>
+  
+    <nav class="md-nav" aria-label="Aquecimento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repetindo-o-if" class="md-nav__link">
+    Repetindo o if
+  </a>
+  
+    <nav class="md-nav" aria-label="Repetindo o if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    Exercício 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    Exercício 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-operador-while" class="md-nav__link">
+    O operador while
+  </a>
+  
+    <nav class="md-nav" aria-label="O operador while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alguns-padroes-de-uso-do-while" class="md-nav__link">
+    Alguns padrões de uso do while
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns padrões de uso do while">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-de-uso-do-while-contagem" class="md-nav__link">
+    Padrões de uso do while: contagem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padroes-de-uso-do-while-validacao" class="md-nav__link">
+    Padrões de uso do while: validação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-11" class="md-nav__link">
+    EXERCÍCIO 11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-12" class="md-nav__link">
+    EXERCÍCIO 12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-adicional-1" class="md-nav__link">
+    EXERCÍCIO ADICIONAL 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mais-exercicios-adicionais" class="md-nav__link">
+    MAIS EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="04-lacos-de-repeticao-while">04 - Laços de Repetição (while)<a class="headerlink" href="#04-lacos-de-repeticao-while" title="Permanent link">&para;</a></h1>
+<p>O objetivo de aprendizado deste handout é que, ao final da atividade, você seja capaz de utilizar laços de repetição (não se preocupe, vamos explicar o que é isso) em seus programas em conjunto com as estruturas que vimos nas aulas anteriores (<code class="highlight"><span class="k">if</span></code>, <code class="highlight"><span class="nb">input</span></code>, etc.) Para isso, vamos trabalhar com o exemplo de um jogo simples: o programa escolhe um número aleatório e o jogador precisa descobrir qual foi o número escolhido.</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Sempre valide a resposta com o professor ou algum colega que já tenha validado a própria resposta <strong>antes de seguir para o próximo exercício</strong>.</p>
+</div>
+<h2 id="aquecimento">Aquecimento<a class="headerlink" href="#aquecimento" title="Permanent link">&para;</a></h2>
+<p>Para começar, vamos implementar uma versão do jogo na qual o jogador só tem uma chance para acertar (sim, completamente na sorte).</p>
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Faça um programa que:</p>
+<ol>
+<li>Sorteia um número aleatório entre <code class="highlight"><span class="mi">1</span></code> e <code class="highlight"><span class="mi">20</span></code> e guarda numa variável;<ul>
+<li>Use a função <code class="highlight"><span class="n">randint</span></code> da biblioteca <code class="highlight"><span class="n">random</span></code> (<strong>dica</strong>: procure a documentação na internet)</li>
+</ul>
+</li>
+<li>Pede ao jogador um número entre <code class="highlight"><span class="mi">1</span></code> e <code class="highlight"><span class="mi">20</span></code></li>
+<li>Dê o feedback da resposta do jogador:<ul>
+<li>Se o número digitado for menor que o número sorteado, escreva <code class="highlight"><span class="s2">&quot;Muito baixo&quot;</span></code>;</li>
+<li>Caso contrário, se o número digitado for maior que o número sorteado, escreva <code class="highlight"><span class="s2">&quot;Muito alto&quot;</span></code>;</li>
+<li>Caso contrário, escreva <code class="highlight"><span class="s2">&quot;Acertou&quot;</span></code>.</li>
+</ul>
+</li>
+</ol>
+</div>
+<h2 id="repetindo-o-if">Repetindo o <code class="highlight"><span class="k">if</span></code><a class="headerlink" href="#repetindo-o-if" title="Permanent link">&para;</a></h2>
+<p>Vamos fazer uma breve reflexão. O que seria necessário alterar no código do exercício 1 para que o jogador tivesse 2 chances? Uma solução rápida seria copiar o bloco do <code class="highlight"><span class="k">if</span></code>, <code class="highlight"><span class="k">elif</span></code>, <code class="highlight"><span class="k">else</span></code> e colar no final do programa. Mas e se o jogador tivesse 5 chances? E 100? E se pudesse continuar tentando <strong>enquanto não tivesse adivinhado o número</strong>?</p>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>O nosso jogo possui muitas condições, então, para introduzir o próximo conceito, vamos considerar um exemplo menor.</p>
+<p>Faça um programa que pergunta ao aluno se ele tem dúvidas na disciplina. Se o aluno responder qualquer coisa diferente de <code class="highlight"><span class="s1">&#39;não&#39;</span></code>, escreva <code class="highlight"><span class="s1">&#39;Pratique mais&#39;</span></code>.</p>
+<p>Uma possível solução para esse exercício pode ser encontrada em: <a href="https://youtu.be/80jQUj6JmYY">https://youtu.be/80jQUj6JmYY</a>. <strong>Atenção</strong>: consulte o vídeo somente depois de tentar resolver o exercício. <strong>Compreender o vídeo não é garantia de que você sabe resolver o problema.</strong> Caso você não tenha conseguido resolver o exercício, assista ao vídeo e depois tente novamente <strong>sem consultar o vídeo novamente</strong>.</p>
+<details class="success"><summary>Resposta</summary><p>Seu código deveria ser similar a este:</p>
+<div class="highlight"><pre><span></span><code><span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-3">Exercício 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Vamos preparar nosso código para que seja possível perguntar novamente se o aluno tem dúvidas caso ele já tenha respondido antes que sim. Adicione uma variável <code class="highlight"><span class="n">tem_duvidas</span></code> <strong>logo no começo do programa</strong>. <em>Inicialize</em> essa variável com (ou seja, faça ela receber inicialmente) o valor <code class="highlight"><span class="kc">True</span></code>. Coloque todo o seu código original dentro de um <code class="highlight"><span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span></code>.</p>
+<p>Além disso, se o aluno responder <code class="highlight"><span class="s1">&#39;não&#39;</span></code>, mude o valor da variável <code class="highlight"><span class="n">tem_duvidas</span></code> para <code class="highlight"><span class="kc">False</span></code>, pois o aluno não tem mais dúvidas.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Essa modificação <strong>não deve alterar</strong> o comportamento do seu programa. Teste-o para garantir que ainda está funcionando. Note que, como inicialmente <code class="highlight"><span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">True</span></code>, o programa <strong>sempre vai entrar no <code class="highlight"><span class="k">if</span></code></strong>.</p>
+</div>
+<p>Antes de prosseguir, compare o seu código com a resposta abaixo. Para os próximos passos fazerem sentido <strong>é importante que o seu código siga a mesma estrutura.</strong></p>
+<details class="success"><summary>Resposta</summary><p>Com a modificação acima seu código deve ficar semelhante a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+</div>
+<p>Considere a seguinte versão modificada do seu programa:</p>
+<div class="highlight"><pre><span></span><code><span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Existem duas possibilidades:</p>
+<ul>
+<li>Se o usuário responder <code class="highlight"><span class="s1">&#39;não&#39;</span></code> na primeira vez, a variável <code class="highlight"><span class="n">tem_duvidas</span></code> será atualizada com <code class="highlight"><span class="kc">False</span></code>. Assim, o bloco do segundo <code class="highlight"><span class="k">if</span> <span class="n">tem_duvidas</span></code> <strong>não será executado</strong>.</li>
+<li>Se o usuário responder qualquer coisa diferente de <code class="highlight"><span class="s1">&#39;não&#39;</span></code>, a variável <code class="highlight"><span class="n">tem_duvidas</span></code> continuará valendo <code class="highlight"><span class="kc">True</span></code>. Assim, o bloco do segundo <code class="highlight"><span class="k">if</span> <span class="n">tem_duvidas</span></code> <strong>será executado</strong> e o programa perguntará novamente se o aluno tem dúvidas.</li>
+</ul>
+<div class="admonition example">
+<h3 id="exercicio-4">Exercício 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Modifique o programa acima para que o aluno tenha 5 chances para responder que não tem mais dúvidas. Depois disso, <strong>mesmo que ele ainda tenha dúvidas</strong>, escreva <code class="highlight"><span class="s1">&#39;Até a próxima&#39;</span></code>. <strong>Dica</strong>: a ideia deste exercício é copiar e colar código e adicionar um <code class="highlight"><span class="nb">print</span></code> no fim. Se você fez algo além disso, provavelmente não é o que estávamos esperando neste ponto.</p>
+<details class="success"><summary>Resposta</summary><p>Com a modificação acima seu código deve ficar semelhante a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">tem_duvidas</span><span class="p">:</span>
+    <span class="n">resposta_do_aluno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você está com dúvidas? &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">resposta_do_aluno</span> <span class="o">==</span> <span class="s1">&#39;não&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns!&#39;</span><span class="p">)</span>
+        <span class="n">tem_duvidas</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pratique mais&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+</div>
+<h2 id="o-operador-while">O operador <code class="highlight"><span class="k">while</span></code><a class="headerlink" href="#o-operador-while" title="Permanent link">&para;</a></h2>
+<p>Se quiséssemos repetir a pergunta mais 100 vezes, poderíamos continuar copiando e colando o código. Um problema é que o código ficaria cada vez mais difícil de manter. Imagine que você decidiu aceitar a resposta <code class="highlight"><span class="s1">&#39;não tenho&#39;</span></code> ao invés de somente <code class="highlight"><span class="s1">&#39;não&#39;</span></code>. Agora você teria pelo menos 100 linhas diferentes para alterar no seu código.</p>
+<p>Ok, é chato e pode dar bastante trabalho, mas ainda dá para fazer. Agora, o que precisaríamos fazer para que o programa <strong>continuasse perguntando enquanto o usuário não respondesse "não"</strong>. Se copiássemos o mesmo bloco de código 1000 vezes ele poderia responder <code class="highlight"><span class="s1">&#39;sim&#39;</span></code> nas 1001 primeiras vezes. Se fizéssemos o mesmo 100000 de vezes, o usuário ainda poderia (por mais que improvável) responder <code class="highlight"><span class="s1">&#39;sim&#39;</span></code> nas 100001 primeiras vezes. Assim, vemos que é necessário utilizar alguma outra estrutura, no caso, o operador <code class="highlight"><span class="k">while</span></code>. Vamos começar relembrando o que o <code class="highlight"><span class="k">if</span></code> faz:</p>
+<p><img alt="O **if** executa o bloco **se** a condição for verdadeira" class="center" src="if.png" width="50%" /></p>
+<p>O <code class="highlight"><span class="k">while</span></code> funciona de maneira similar, mas ao final da execução do bloco, <strong>a condição é reavaliada</strong> e, caso seja verdadeira, o bloco é executado novamente <strong>enquanto a condição for verdadeira</strong>:</p>
+<p><img alt="O **while** executa o bloco **enquanto** a condição for verdadeira" class="center" src="while.png" width="50%" /></p>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Modifique o programa do <a href="#exercicio-3">exercício 3</a> para que ele continue perguntando se o usuário tem dúvidas enquanto ele responder qualquer coisa diferente de <code class="highlight"><span class="s1">&#39;não&#39;</span></code>. <strong>Dica</strong>: basta trocar um dos <code class="highlight"><span class="k">if</span></code>s por um <code class="highlight"><span class="k">while</span></code>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Faça o exercício <a href="http://softdes.insper.edu.br/exercicio/113">[TESTE DE MESA] Aluno com dúvidas</a>.</p>
+<p>O vídeo a seguir apresenta uma possível solução para o exercício anterior e explica o conceito de <code class="highlight"><span class="k">while</span></code>: <a href="https://youtu.be/vNspAsXabxY">https://youtu.be/vNspAsXabxY</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>Agora podemos voltar para o nosso jogo. Modifique o seu programa do <a href="#exercicio-1">exercício 1</a> para que o jogador possa continuar chutando um valor enquanto o usuário não acertar. Em outras palavras, modifique o programa para que o jogador tenha tentativas infinitas.</p>
+<p>O vídeo a seguir apresenta algumas possíveis soluções: <a href="https://youtu.be/Z-N5kzXHHO0">https://youtu.be/Z-N5kzXHHO0</a>. Novamente, <strong>consulte o vídeo somente depois de tentar resolver o exercício por conta própria</strong>.</p>
+</div>
+<h2 id="alguns-padroes-de-uso-do-while">Alguns padrões de uso do <code class="highlight"><span class="k">while</span></code><a class="headerlink" href="#alguns-padroes-de-uso-do-while" title="Permanent link">&para;</a></h2>
+<p>Vamos trabalhar agora com alguns padrões comuns de uso do <code class="highlight"><span class="k">while</span></code>. Procure entender a lógica dos programas a seguir. De modo geral sempre será necessário adaptar o padrão para a sua aplicação específica.</p>
+<div class="admonition example">
+<h3 id="exercicio-8">EXERCÍCIO 8<a class="headerlink" href="#exercicio-8" title="Permanent link">&para;</a></h3>
+<p>Faça o exercício <a href="http://softdes.insper.edu.br/exercicio/114">[TESTE DE MESA] Padrões de uso do while: contagem</a>.</p>
+</div>
+<h3 id="padroes-de-uso-do-while-contagem">Padrões de uso do <code class="highlight"><span class="k">while</span></code>: contagem<a class="headerlink" href="#padroes-de-uso-do-while-contagem" title="Permanent link">&para;</a></h3>
+<p>Podemos utilizar o <code class="highlight"><span class="k">while</span></code> para fazer contagens. No exemplo do exercício anterior, nós contamos quantas vezes o bloco do <code class="highlight"><span class="k">while</span></code> é executado (lembrando que em programação começamos a contar do 0). Essa informação é armazenada na variável <code class="highlight"><span class="n">contador</span></code>.</p>
+<p>Você pode usar qualquer nome de variável para o contador. No nosso exemplo nós utilizamos <code class="highlight"><span class="n">contador</span></code> para deixar o seu objetivo explícito. Entretanto, o uso de contadores é tão comum, que é normal encontrar variáveis que servem como contadores com nomes curtos, como <code class="highlight"><span class="n">i</span></code> ou <code class="highlight"><span class="n">j</span></code>. Independentemente do nome da variável, um contador é uma variável utilizada para guardar o resultado da contagem.</p>
+<div class="admonition example">
+<h3 id="exercicio-9">EXERCÍCIO 9<a class="headerlink" href="#exercicio-9" title="Permanent link">&para;</a></h3>
+<p>Modifique o código do <a href="#exercicio-7">exercício 7</a> para mostrar ao final do jogo a quantidade de tentativas do jogador até ele descobrir o número correto.</p>
+<p>O vídeo a seguir explica o padrão de uso do <code class="highlight"><span class="k">while</span></code> com contadores e apresenta uma possível solução para este exercício: <a href="https://youtu.be/wBjnd2RaJKE">https://youtu.be/wBjnd2RaJKE</a>. Como sempre, <strong>consulte somente depois de tentar resolver o exercício</strong>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-10">EXERCÍCIO 10<a class="headerlink" href="#exercicio-10" title="Permanent link">&para;</a></h3>
+<p>Faça o exercício <a href="http://softdes.insper.edu.br/exercicio/115">[TESTE DE MESA] Padrões de uso do while: validação</a>.</p>
+</div>
+<h3 id="padroes-de-uso-do-while-validacao">Padrões de uso do <code class="highlight"><span class="k">while</span></code>: validação<a class="headerlink" href="#padroes-de-uso-do-while-validacao" title="Permanent link">&para;</a></h3>
+<p>No exercício 8 temos um exemplo de como usar o <code class="highlight"><span class="k">while</span></code> para validar uma entrada. Nesse caso, o programa vai ficar "preso" no <code class="highlight"><span class="k">while</span></code> até que o usuário digite um número válido (no exemplo, um número par).</p>
+<div class="admonition example">
+<h3 id="exercicio-11">EXERCÍCIO 11<a class="headerlink" href="#exercicio-11" title="Permanent link">&para;</a></h3>
+<p>Modifique o jogo de adivinha (<a href="#exercicio-9">exercício 9</a>) para validar que a entrada do usuário é um número inteiro entre 1 e 20 (inclusive). Ou seja, antes de verificar se o jogador acertou o número é necessário validar a entrada. <strong>Entradas inválidas não devem ser contabilizadas</strong>.</p>
+<p>Para uma possível solução, consulte o vídeo a seguir: <a href="https://youtu.be/5IQDVYPi9As">https://youtu.be/5IQDVYPi9As</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-12">EXERCÍCIO 12<a class="headerlink" href="#exercicio-12" title="Permanent link">&para;</a></h3>
+<p>Modifique o jogo de adivinha para que ele tenha no máximo cinco tentativas. Caso o jogo termine por exceder o limite de tentativas, uma mensagem adequada deve ser impressa (e.g. <code class="highlight"><span class="s1">&#39;Que pena, você perdeu!&#39;</span></code>).</p>
+<p>Uma solução é apresentada em: <a href="https://youtu.be/GfsmrVnLdws">https://youtu.be/GfsmrVnLdws</a></p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-adicional-1">EXERCÍCIO ADICIONAL 1<a class="headerlink" href="#exercicio-adicional-1" title="Permanent link">&para;</a></h3>
+<p>Assista o vídeo a seguir com uma discussão sobre a qualidade do código: <a href="https://youtu.be/XCb8jSUcfsc">https://youtu.be/XCb8jSUcfsc</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="mais-exercicios-adicionais">MAIS EXERCÍCIOS ADICIONAIS<a class="headerlink" href="#mais-exercicios-adicionais" title="Permanent link">&para;</a></h3>
+<p>Como sempre, se acabar os exercícios deste handout, continue praticando com os exercícios disponíveis no <a href="http://softdes.insper.edu.br/">servidor</a>.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                03 - Desvios Condicionais (if)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../05-listas/" title="05 - Listas" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                05 - Listas
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

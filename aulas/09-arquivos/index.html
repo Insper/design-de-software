@@ -1,0 +1,1159 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/09-arquivos/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>09 - Arquivos - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#09-arquivos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              09 - Arquivos
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        09 - Arquivos
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="09 - Arquivos" class="md-nav__link md-nav__link--active">
+      09 - Arquivos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-arquivos" class="md-nav__link">
+    Acessando arquivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquivos-em-python" class="md-nav__link">
+    Arquivos em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquivos em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrindo-arquivos-com-o-with" class="md-nav__link">
+    Abrindo arquivos com o with
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-abertura-de-um-arquivo" class="md-nav__link">
+    Modos de abertura de um arquivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+    <nav class="md-nav" aria-label="EXERCÍCIO 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programa-1" class="md-nav__link">
+    Programa 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programa-2" class="md-nav__link">
+    Programa 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programa-3" class="md-nav__link">
+    Programa 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumo-dos-metodos-de-arquivos" class="md-nav__link">
+    Resumo dos métodos de arquivos:
+  </a>
+  
+    <nav class="md-nav" aria-label="Resumo dos métodos de arquivos:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-arquivos-abertos-no-modo-de-leitura" class="md-nav__link">
+    Para arquivos abertos no modo de leitura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-arquivos-abertos-no-modo-de-escrita" class="md-nav__link">
+    Para arquivos abertos no modo de escrita
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-formato-json" class="md-nav__link">
+    O formato JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="O formato JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-arquivos" class="md-nav__link">
+    Acessando arquivos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquivos-em-python" class="md-nav__link">
+    Arquivos em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquivos em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abrindo-arquivos-com-o-with" class="md-nav__link">
+    Abrindo arquivos com o with
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-abertura-de-um-arquivo" class="md-nav__link">
+    Modos de abertura de um arquivo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+    <nav class="md-nav" aria-label="EXERCÍCIO 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programa-1" class="md-nav__link">
+    Programa 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programa-2" class="md-nav__link">
+    Programa 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programa-3" class="md-nav__link">
+    Programa 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumo-dos-metodos-de-arquivos" class="md-nav__link">
+    Resumo dos métodos de arquivos:
+  </a>
+  
+    <nav class="md-nav" aria-label="Resumo dos métodos de arquivos:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-arquivos-abertos-no-modo-de-leitura" class="md-nav__link">
+    Para arquivos abertos no modo de leitura
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#para-arquivos-abertos-no-modo-de-escrita" class="md-nav__link">
+    Para arquivos abertos no modo de escrita
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-formato-json" class="md-nav__link">
+    O formato JSON
+  </a>
+  
+    <nav class="md-nav" aria-label="O formato JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="09-arquivos">09 - Arquivos<a class="headerlink" href="#09-arquivos" title="Permanent link">&para;</a></h1>
+<p>Nossos programas até o momento utilizam dados fornecidos pelo usuário ou obtidos a partir de algum cálculo, mas esses dados são perdidos assim que o programa acaba. Arquivos são estruturas de dados que normalmente são armazenados em dispositivos secundários de memória. Esses dispositivos secundários de memória permitem o armazenamento permanente dos dados, ou seja, mesmo depois que o programa acaba ou até depois que o computador é reiniciado, os dados continuam existindo. Os principais dispositivos de armazenamento atualmente são:</p>
+<ul>
+<li>Disco Rígido (HD)</li>
+<li>Solid-State Drive (SSD)</li>
+<li>Pen Drives</li>
+</ul>
+<p>Os arquivos armazenados nestes dispositivos possuem sempre uma <strong>identificação (nome)</strong> e sua <strong>localização</strong> (normalmente em uma estrutura hierárquica de diretórios). Outros atributos como data e permissões de acesso também são normalmente usados no índice.</p>
+<h2 id="acessando-arquivos">Acessando arquivos<a class="headerlink" href="#acessando-arquivos" title="Permanent link">&para;</a></h2>
+<p>Arquivos são lidos como uma sequência de bytes. Um byte é um conjunto de 8 bits (<b>BI</b>nary digi<b>T</b>), que são valores do tipo 0 ou 1. Bytes por si só não possuem significado nenhum, são simplesmente uma sequência de 0s e 1s. É necessário que um programa seja capaz de entender essa sequência de bytes do arquivo para extrair alguma informação.</p>
+<p>Existem basicamente dois tipos de arquivos:</p>
+<ul>
+<li><strong>Arquivos de texto</strong>: os bytes representam caracteres. Por exemplo, os arquivos <code class="highlight"><span class="o">.</span><span class="n">py</span></code> que criamos com o nosso código Python são arquivos de texto. Cada caractere do nosso código Python (incluindo espaços e pula linha) é representado por um byte e armazenado no nosso HD ou SSD.</li>
+<li><strong>Arquivos binários</strong>: cada byte pode ter um significado diferente. Por exemplo, em imagens é comum usar bytes para representar cores. No exemplo abaixo, os bytes do arquivo (à direita) são interpretados por um programa que é capaz de mostrar o resultado como uma imagem (à esquerda)</li>
+</ul>
+<p><img alt="" class="center" src="arquivo-binario.png" width="50%" /></p>
+<p>Neste handout vamos aprender a trabalhar com arquivos em Python. Ao final do handout você deve ser capaz de abrir um arquivo para (1) ler os dados armazenados; ou (2) escrever dados.</p>
+<h2 id="arquivos-em-python">Arquivos em Python<a class="headerlink" href="#arquivos-em-python" title="Permanent link">&para;</a></h2>
+<p>Antes de utilizar qualquer arquivo é necessário abri-lo. Para isso, existe a função <code class="highlight"><span class="nb">open</span><span class="p">()</span></code>, que recebe pelo menos dois argumentos: a localização do arquivo e o modo de abertura. Depois de utilizar o arquivo é <strong>muito importante</strong> lembrar de fechá-lo. <a href="https://www.myinstants.com/instant/tan-tan-tan/">Muitos problemas podem acontecer se você esquecer de fechar o programa</a>. Para isso devemos usar a função <code class="highlight"><span class="n">close</span><span class="p">()</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Modo tradicional de ler um arquivo</span>
+<span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># O que acontece se não fechar?</span>
+
+<span class="c1"># Imprime o conteúdo</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
+</code></pre></div>
+
+<p>O programa acima abre um arquivo chamado <code class="highlight"><span class="n">arquivo_texto</span><span class="o">.</span><span class="n">txt</span></code> para leitura (<strong>importante</strong>: ele deve existir na mesma pasta onde você está executando o seu programa), armazena o conteúdo na variável <code class="highlight"><span class="n">conteudo</span></code>, fecha o arquivo e depois imprime todo o conteúdo do arquivo.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Os testes deste handout utilizam arquivos externos. Por esse motivo, não faz muito sentido fazermos testes de mesa no servidor. A melhor maneira de entender o que o programa está fazendo é executá-lo no próprio computador para observar as mudanças nos outros arquivos. Assim, neste handout não teremos testes de mesa do servidor. Faça todos os testes no seu próprio computador.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Teste o programa acima no seu computador. Para isso, crie um arquivo chamado <code class="highlight"><span class="n">arquivo_texto</span><span class="o">.</span><span class="n">txt</span></code> e escreva alguma coisa (pode ser no Spyder, VS Code, ou qualquer editor de texto de sua preferência - <strong>não use o Word, pois ele gera um arquivo muito mais complicado</strong>). Salve o programa acima <strong>na mesma pasta</strong>. Execute seu programa. Ele deve imprimir no terminal o conteúdo do seu arquivo.</p>
+<div class="admonition danger">
+<p class="admonition-title">Caminho (<em>path</em>) do arquivo</p>
+<p>Quando estamos trabalhando com arquivos é comum obtermos o erro <code class="highlight"><span class="ne">FileNotFoundError</span></code>. Ele ocorre quando tentamos abrir (<code class="highlight"><span class="nb">open</span><span class="p">()</span></code>) um arquivo que não existe. É importante que o arquivo que você está tentando abrir esteja na mesma pasta que contém o seu programa.</p>
+<p>É possível abrir arquivos localizados em outras pastas do seu computador, mas nesse caso é necessário especificar o caminho do arquivo, ou seja, qual é a sequência de pastas que devem ser percorridas para se localizar esse arquivo.</p>
+</div>
+</div>
+<h3 id="abrindo-arquivos-com-o-with">Abrindo arquivos com o <code class="highlight"><span class="k">with</span></code><a class="headerlink" href="#abrindo-arquivos-com-o-with" title="Permanent link">&para;</a></h3>
+<p>Como dissemos anteriormente, é muito importante se lembrar de fechar o arquivo depois de utilizá-lo. Na verdade, isso é tão importante que existe uma maneira de escrevermos um código que fecha o arquivo automaticamente depois que terminamos de utilizá-lo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Abre um arquivo para a leitura.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Quando sai do bloco do &#39;with&#39;, fecha o arquivo automaticamente.</span>
+
+<span class="c1"># Imprime o conteúdo</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
+</code></pre></div>
+
+<p>A sintaxe do código acima é um pouco diferente, então vamos por partes. O <code class="highlight"><span class="k">with</span></code> define um bloco dentro do qual o arquivo será utilizado. Assim que o bloco termina, o que é indicado pelo fim da indentação, o arquivo será automaticamente fechado. A função <code class="highlight"><span class="nb">open</span><span class="p">()</span></code> não foi alterada, mas agora ao invés de <code class="highlight"><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span></code> nós temos <code class="highlight"><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span></code>. O resultado será o mesmo: o arquivo aberto será armazenado na variável <code class="highlight"><span class="n">arquivo</span></code>. Essa inversão da ordem é feita apenas em conjunto com o <code class="highlight"><span class="k">with</span></code>.</p>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Teste a versão do programa acima. O resultado deve ser o mesmo da primeira versão.</p>
+</div>
+<h3 id="modos-de-abertura-de-um-arquivo">Modos de abertura de um arquivo<a class="headerlink" href="#modos-de-abertura-de-um-arquivo" title="Permanent link">&para;</a></h3>
+<p>Comentamos que existem dois tipos de arquivo: arquivos binários e arquivos de texto. Nos exemplos acima nós trabalhamos com a leitura de um arquivo de texto. Para isso o modo de abertura do arquivo foi o <code class="highlight"><span class="s1">&#39;r&#39;</span></code>, ou seja, leitura (<em>read</em>). Para abrir um arquivo binário para leitura devemos utilizar o modo <code class="highlight"><span class="s1">&#39;rb&#39;</span></code> (<em>read binary</em>). Tanto o modo <code class="highlight"><span class="s1">&#39;r&#39;</span></code> quanto o modo <code class="highlight"><span class="s1">&#39;rb&#39;</span></code> permitem apenas a leitura de um arquivo existente. Não é possível adicionar (escrever) nenhuma informação a ele.</p>
+<p>Para adicionar dados a um arquivo devemos abri-lo com algum dos modos de <strong>escrita</strong>. Os modos disponíveis são <code class="highlight"><span class="s1">&#39;w&#39;</span></code> e <code class="highlight"><span class="s1">&#39;a&#39;</span></code>. O modo <code class="highlight"><span class="s1">&#39;w&#39;</span></code> cria um novo arquivo no modo escrita (<strong>write</strong>). <strong>Importante:</strong> se já existir um arquivo com o mesmo nome ele apaga o antigo. O modo <code class="highlight"><span class="s1">&#39;a&#39;</span></code> (<em>append</em>) é um modo de escrita alternativo que adiciona o novo conteúdo ao final do arquivo se ele já existir, sem apagar o conteúdo anterior. Exemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Cria o arquivo para escrita (limpa o antigo se já existir)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="c1"># Escrevendo um texto</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;algum dado</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Abre/Cria o arquivo para escrita SEM apagar o que tinha antes.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;arquivo_texto.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="c1"># Escrevendo um texto</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;novo dado</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>A seguir apresentamos um resumo dos principais modos de abertura de arquivos (para mais detalhes consulte <a href="https://docs.python.org/3/library/functions.html#open">a documentação</a>):</p>
+<ul>
+<li><strong><code>'r'</code></strong>: modo de leitura de arquivo texto;</li>
+<li><strong><code>'rb'</code></strong>: modo de leitura de arquivo binário;</li>
+<li><strong><code>'w'</code></strong>: modo de escrita de arquivo texto;</li>
+<li><strong><code>'wb'</code></strong>: modo de escrita de arquivo binário;</li>
+<li><strong><code>'a'</code></strong>: modo de escrita de arquivo texto, sem apagar o conteúdo anterior;</li>
+<li><strong><code>'ab'</code></strong>: modo de escrita de arquivo binário, sem apagar o conteúdo anterior.</li>
+</ul>
+<div class="admonition example">
+<h3 id="exercicio-3">EXERCÍCIO 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Teste o programa acima no seu computador. Ele não vai imprimir nada no terminal, mas ao abrir o arquivo <code class="highlight"><span class="n">arquivo_texto</span><span class="o">.</span><span class="n">txt</span></code> o seu conteúdo deve ser:</p>
+<div class="highlight"><pre><span></span><code>algum dado
+novo dado
+</code></pre></div>
+
+<p>Se trocássemos a ordem dos blocos <code class="highlight"><span class="k">with</span></code> do programa acima, qual seria o efeito esperado? Teste essa mudança e verifique se ele fez o que você esperava.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-4">EXERCÍCIO 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Salve o arquivo <a href="cancao_do_exilio.txt"><code class="highlight"><span class="n">cancao_do_exilio</span><span class="o">.</span><span class="n">txt</span></code> (disponível neste link)</a> na mesma pasta onde você fez os outros testes deste handout. Depois disso, teste cada um dos programas abaixo:</p>
+<h4 id="programa-1">Programa 1<a class="headerlink" href="#programa-1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lendo tudo de uma vez</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cancao_do_exilio.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo_completo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">conteudo_completo</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="programa-2">Programa 2<a class="headerlink" href="#programa-2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lendo apenas a primeira linha</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cancao_do_exilio.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">primeira_linha</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primeira_linha</span><span class="p">)</span>
+</code></pre></div>
+
+<h4 id="programa-3">Programa 3<a class="headerlink" href="#programa-3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lendo de linha em linha (note o plural em readlines)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;cancao_do_exilio.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="c1"># linhas é uma lista de strings, cada linha é uma string diferente</span>
+    <span class="n">linhas</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="c1"># Verificando que linhas é uma lista de strings</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
+    <span class="c1"># Imprimindo de linha em linha</span>
+    <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">linhas</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Note que no último exemplo as linhas aparecerão sempre com uma linha em branco entre si. Isso acontece porque no arquivo original cada linha termina em um <code class="highlight"><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span></code>, que indica que a linha terminou, mas o print também pula uma linha automaticamente, então sempre serão puladas duas linhas.</p>
+</div>
+<h3 id="resumo-dos-metodos-de-arquivos">Resumo dos métodos de arquivos:<a class="headerlink" href="#resumo-dos-metodos-de-arquivos" title="Permanent link">&para;</a></h3>
+<p>Abaixo você encontra um resumo dos principais métodos de arquivos. Para mais detalhes, consulte <a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">a documentação</a>.</p>
+<h4 id="para-arquivos-abertos-no-modo-de-leitura">Para arquivos abertos no modo de leitura<a class="headerlink" href="#para-arquivos-abertos-no-modo-de-leitura" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>read</code></strong>: retorna todo o conteúdo do arquivo em uma única string;</li>
+<li><strong><code>readline</code></strong>: retorna uma string contendo apenas a próxima linha;</li>
+<li><strong><code>readlines</code></strong>: retorna uma lista de strings, contendo uma string para cada linha.</li>
+</ul>
+<h4 id="para-arquivos-abertos-no-modo-de-escrita">Para arquivos abertos no modo de escrita<a class="headerlink" href="#para-arquivos-abertos-no-modo-de-escrita" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>write</code></strong>: escreve no arquivo a string passada como argumento;</li>
+<li><strong><code>writelines</code></strong>: recebe uma lista de strings e escreve todas no arquivo.</li>
+</ul>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/158">Exercício 158. Conta palavras no arquivo</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/85">Exercício 85. Bananas no arquivo</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/86">Exercício 86. CSV para TSV</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-8">EXERCÍCIO 8<a class="headerlink" href="#exercicio-8" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/87">Exercício 87. Custo do churrasco</a>.</p>
+</div>
+<h2 id="o-formato-json">O formato JSON<a class="headerlink" href="#o-formato-json" title="Permanent link">&para;</a></h2>
+<p>O formato JSON é uma forma de trocar informação de modo estruturado, simples e rápido entre sistemas. Ele é muito parecido com um dicionário do Python, contudo o JSON é um texto (string) e não uma estrutura de dados. Por ser um texto, ele pode ser armazenado em um arquivo. Assim esses dados continuam existindo, mesmo depois que o programa termina. Exemplo:</p>
+<div class="highlight"><pre><span></span><code>{&quot;Alunos&quot;:[
+     { &quot;nome&quot;: &quot;João&quot;, &quot;notas&quot;: [ 8, 9, 5 ]  },
+     { &quot;nome&quot;: &quot;Maria&quot;, &quot;notas&quot;: [ 8, 10, 7 ] },
+     { &quot;nome&quot;: &quot;José&quot;, &quot;notas&quot;: [ 10, 10, 9 ] }
+]}
+</code></pre></div>
+
+<p>O JSON acima contém os nomes e notas de 3 alunos. Esse poderia ser o conteúdo de um arquivo de texto chamado, por exemplo, <code class="highlight"><span class="n">alunos</span><span class="o">.</span><span class="n">json</span></code>. Para utilizar os dados presentes nele será necessário processar a string JSON para obter um dicionário. Para isso utilizamos o módulo <code class="highlight"><span class="n">json</span></code> do Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;alunos.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo_json</span><span class="p">:</span>
+    <span class="n">texto</span> <span class="o">=</span> <span class="n">arquivo_json</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<span class="c1"># Para verificar que é realmente um texto (string),</span>
+<span class="c1"># vamos usar um fatiamento:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span>
+
+<span class="c1"># Criando um dicionário a partir das informações no texto</span>
+<span class="n">dicionario</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+
+<span class="c1"># Para verificar que é um dicionário,</span>
+<span class="c1"># vamos imprimir o valor armazenado na chave &quot;Alunos&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dicionario</span><span class="p">[</span><span class="s1">&#39;Alunos&#39;</span><span class="p">])</span>
+
+<span class="c1"># Adicionando um novo aluno no dicionário</span>
+<span class="n">novo_aluno</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;notas&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]}</span>
+<span class="n">dicionario</span><span class="p">[</span><span class="s1">&#39;Alunos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">novo_aluno</span><span class="p">)</span>
+
+<span class="c1"># Transformando de volta para JSON (texto)</span>
+<span class="n">novo_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dicionario</span><span class="p">)</span>
+
+<span class="c1"># Salvando o arquivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;alunos.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo_json</span><span class="p">:</span>
+    <span class="n">arquivo_json</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">novo_json</span><span class="p">)</span>
+
+<span class="c1"># Abra o arquivo alunos.json e verifique seu conteúdo.</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-9">EXERCÍCIO 9<a class="headerlink" href="#exercicio-9" title="Permanent link">&para;</a></h3>
+<p>Baixe o arquivo <a href="alunos.json"><code>alunos.json</code></a> disponível <a href="alunos.json">neste link</a>. Salve-o na mesma pasta onde você está fazendo os testes deste handout. Abra o arquivo no Spyder, VS Code ou seu editor de texto favorito. Crie um novo arquivo chamado <code>testa_json.py</code> e copie o código do programa acima. Teste-o e verifique o conteúdo do arquivo <code>alunos.json</code>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-10">EXERCÍCIO 10<a class="headerlink" href="#exercicio-10" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/159">Exercício 159. Valor total do estoque</a>.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                08 - Strings e Fatiamento
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../10-pygame/" title="10 - PyGame" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                10 - PyGame
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

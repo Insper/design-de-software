@@ -1,0 +1,1136 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/07-dicionarios/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>07 - Dicionários - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#07-dicionarios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              07 - Dicionários
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        07 - Dicionários
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="07 - Dicionários" class="md-nav__link md-nav__link--active">
+      07 - Dicionários
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-com-listas" class="md-nav__link">
+    Exemplo com listas
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo com listas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicionarios" class="md-nav__link">
+    Dicionários
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicionários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaves-e-valores" class="md-nav__link">
+    Chaves e valores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessando-valores-em-um-dicionario" class="md-nav__link">
+    Acessando valores em um dicionário
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicializacao-de-dicionarios" class="md-nav__link">
+    Inicialização de dicionários
+  </a>
+  
+    <nav class="md-nav" aria-label="Inicialização de dicionários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tem-append" class="md-nav__link">
+    Tem append?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificando-se-uma-chave-existe" class="md-nav__link">
+    Verificando se uma chave existe
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificando se uma chave existe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percorrendo-um-dicionario" class="md-nav__link">
+    Percorrendo um dicionário
+  </a>
+  
+    <nav class="md-nav" aria-label="Percorrendo um dicionário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcao-1" class="md-nav__link">
+    Opção 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcao-2" class="md-nav__link">
+    Opção 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcao-3" class="md-nav__link">
+    Opção 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removendo-um-item-do-dicionario" class="md-nav__link">
+    Removendo um item do dicionário
+  </a>
+  
+    <nav class="md-nav" aria-label="Removendo um item do dicionário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-com-listas" class="md-nav__link">
+    Exemplo com listas
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo com listas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicionarios" class="md-nav__link">
+    Dicionários
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicionários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaves-e-valores" class="md-nav__link">
+    Chaves e valores
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acessando-valores-em-um-dicionario" class="md-nav__link">
+    Acessando valores em um dicionário
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicializacao-de-dicionarios" class="md-nav__link">
+    Inicialização de dicionários
+  </a>
+  
+    <nav class="md-nav" aria-label="Inicialização de dicionários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tem-append" class="md-nav__link">
+    Tem append?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificando-se-uma-chave-existe" class="md-nav__link">
+    Verificando se uma chave existe
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificando se uma chave existe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#percorrendo-um-dicionario" class="md-nav__link">
+    Percorrendo um dicionário
+  </a>
+  
+    <nav class="md-nav" aria-label="Percorrendo um dicionário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opcao-1" class="md-nav__link">
+    Opção 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcao-2" class="md-nav__link">
+    Opção 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcao-3" class="md-nav__link">
+    Opção 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removendo-um-item-do-dicionario" class="md-nav__link">
+    Removendo um item do dicionário
+  </a>
+  
+    <nav class="md-nav" aria-label="Removendo um item do dicionário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="07-dicionarios">07 - Dicionários<a class="headerlink" href="#07-dicionarios" title="Permanent link">&para;</a></h1>
+<p>O objetivo de aprendizado deste handout é que, ao final da atividade, você seja capaz de utilizar dicionários em seus programas em conjunto com as estruturas que vimos nas aulas anteriores (<code class="highlight"><span class="nb">input</span></code>, <code class="highlight"><span class="k">if</span></code>, <code class="highlight"><span class="k">while</span></code>, <code class="highlight"><span class="k">for</span></code>, <code class="highlight"><span class="nb">list</span></code>, etc.). Vamos começar com um aquecimento.</p>
+<h2 id="exemplo-com-listas">Exemplo com listas<a class="headerlink" href="#exemplo-com-listas" title="Permanent link">&para;</a></h2>
+<p>Analise o código abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Fulano&quot;</span><span class="p">,</span> <span class="s2">&quot;99999-1111&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Sicrano&quot;</span><span class="p">,</span> <span class="s2">&quot;99999-2222&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Beltrano&quot;</span><span class="p">,</span> <span class="s2">&quot;99999-3333&quot;</span><span class="p">]]</span>
+
+<span class="n">nome_selecionado</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um nome: &quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">nome_e_telefone</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="n">nome</span> <span class="o">=</span> <span class="n">nome_e_telefone</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">nome</span> <span class="o">==</span> <span class="n">nome_selecionado</span><span class="p">:</span>
+        <span class="n">telefone</span> <span class="o">=</span> <span class="n">nome_e_telefone</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Telefone de </span><span class="si">{0}</span><span class="s2"> é: </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">telefone</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Discuta o código acima com um colega. Apresentem suas interpretações e depois validem a compreensão com a descrição a seguir:</p>
+<details class="info"><summary>Abra apenas para validar a sua compreensão</summary><ol>
+<li>Começamos o código criando uma lista na qual cada elemento é uma outra lista contendo dois elementos. O primeiro desses elementos é sempre um nome e o segundo é sempre o seu respectivo telefone;</li>
+<li>O usuário digita um nome;</li>
+<li>Para cada elemento <code class="highlight"><span class="n">nome_e_telefone</span></code> da <code class="highlight"><span class="n">lista</span></code> repetimos o bloco a seguir (note que a variável <code class="highlight"><span class="n">nome_e_telefone</span></code> sempre vai guardar uma lista com exatamente dois elementos, o nome e o telefone):<ol>
+<li>Armazenamos o primeiro elemento (o nome) de <code class="highlight"><span class="n">nome_e_telefone</span></code> em uma variável <code class="highlight"><span class="n">nome</span></code>;</li>
+<li>Se o nome for igual ao nome digitado pelo usuário executamos o bloco a seguir:<ol>
+<li>Armazenamos o segundo elemento (o telefone) de <code class="highlight"><span class="n">nome_e_telefone</span></code> em uma variável <code class="highlight"><span class="n">telefone</span></code>;</li>
+<li>Imprimimos o <code class="highlight"><span class="n">telefone</span></code> da pessoa selecionada</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Mesmo depois de imprimir o telefone da pessoa selecionada, o código continua percorrendo os próximos elementos da lista até o fim.</p>
+</div>
+</details>
+</div>
+<p>Acabamos de implementar uma lista de contatos!</p>
+<p>No código acima, não seria mais fácil se eu pudesse acessar elementos de uma lista utilizando palavras ao invés de números (índices)? Assim eu poderia acessar, por exemplo, o telefone de <code class="highlight"><span class="s2">&quot;Fulano&quot;</span></code> com o código <code class="highlight"><span class="n">lista</span><span class="p">[</span><span class="s2">&quot;Fulano&quot;</span><span class="p">]</span></code> ao invés de ter que procurar por todos os elementos da lista. Para isso temos os dicionários!</p>
+<h2 id="dicionarios">Dicionários<a class="headerlink" href="#dicionarios" title="Permanent link">&para;</a></h2>
+<p>Um dicionário pode armazenar uma quantidade arbitrária de elementos, assim como uma lista. A diferença é que não estamos limitados a utilizar números como os índices, em dicionários podemos indexar os elementos por quase qualquer coisa (floats, strings, etc.)! No exemplo da lista de contatos, poderíamos ter ao invés de uma lista de nomes e telefones indexados por números, uma lista de telefones indexada por nomes:</p>
+<p><img alt="" class="center" src="list2dict.png" /></p>
+<p>O problema disso é que na lista a posição de cada elemento está claramente associada a um número: o primeiro elemento da lista é o 0, o segundo é o 1, o terceiro é o 2 e assim por diante. No dicionário essa associação entre o índice (no exemplo, o nome) e a localização de um valor (o telefone) não é igualmente clara. Independente da ordem dos elementos no dicionário queremos utilizar os nomes para acessar os telefones. Por isso, ao criar um dicionário precisamos ser explícitos sobre qual é o "índice" de cada valor adicionado. Fazemos isso utilizando o seguinte código (ainda utilizando o exemplo acima):</p>
+<div class="highlight"><pre><span></span><code><span class="n">dicionario</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Fulano&quot;</span><span class="p">:</span> <span class="s2">&quot;99999-1111&quot;</span><span class="p">,</span> <span class="s2">&quot;Sicrano&quot;</span><span class="p">:</span> <span class="s2">&quot;99999-2222&quot;</span><span class="p">,</span> <span class="s2">&quot;Beltrano&quot;</span><span class="p">:</span> <span class="s2">&quot;99999-3333&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>A princípio pode parecer um pouco assustador, mas não se preocupe, com um pouco de prática você vai se acostumar. Vamos entender o que a linha acima está fazendo. Assim como definimos listas utilizando os colchetes <code class="highlight"><span class="p">[]</span></code>, os dicionários são definidos com chaves <code class="highlight"><span class="p">{}</span></code>. Então definimos os pares de "índice" e valor do elemento separados por dois pontos ("<code class="highlight"><span class="p">:</span></code>").</p>
+<h3 id="chaves-e-valores">Chaves e valores<a class="headerlink" href="#chaves-e-valores" title="Permanent link">&para;</a></h3>
+<p>Talvez você tenha reparado que utilizamos aspas quando nos referíamos aos "índices" do dicionário. Na verdade, no dicionário chamamos os índices de <strong>chaves</strong> (em inglês: "<em>keys</em>") e os elementos armazenados de <strong>valores</strong> (em inglês: "<em>values</em>"). Vimos também que as chaves e valores estão associados. Esse par chave-valor é chamado de <strong>item</strong> (em inglês... também é "<em>item</em>"). Por exemplo, em:</p>
+<div class="highlight"><pre><span></span><code><span class="n">idades</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Sicrano&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Beltrano&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">}</span>
+</code></pre></div>
+
+<p>As chaves são <code class="highlight"><span class="s1">&#39;Sicrano&#39;</span></code> e <code class="highlight"><span class="s1">&#39;Beltrano&#39;</span></code>, os valores são <code class="highlight"><span class="mi">18</span></code> e <code class="highlight"><span class="mi">20</span></code> e os itens são <code class="highlight"><span class="p">(</span><span class="s1">&#39;Sicrano&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span></code> e <code class="highlight"><span class="p">(</span><span class="s1">&#39;Beltrano&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span></code>.</p>
+<h3 id="acessando-valores-em-um-dicionario">Acessando valores em um dicionário<a class="headerlink" href="#acessando-valores-em-um-dicionario" title="Permanent link">&para;</a></h3>
+<p>Vimos que podemos criar um dicionário colocando os pares de chaves e valores entre <code class="highlight"><span class="p">{</span></code> e <code class="highlight"><span class="p">}</span></code>. Para acessa um valor em uma determinada chave utilizamos o mesmo formato utilizado em listas. No nosso exemplo, <code class="highlight"><span class="n">dicionario</span><span class="p">[</span><span class="s1">&#39;Sicrano&#39;</span><span class="p">]</span></code> devolve o valor armazenado na chave <code class="highlight"><span class="s1">&#39;Sicrano&#39;</span></code>, ou seja, <code class="highlight"><span class="s1">&#39;99999-2222&#39;</span></code>.</p>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Reescreva o código da lista de contatos (no começo do handout) para utilizar dicionários. <strong>Dica:</strong> o <code class="highlight"><span class="k">for</span></code> não será mais necessário. É possível substituí-lo por uma única linha.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-3">EXERCÍCIO 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Uma possível solução para o <a href="#exercicio-2">exercício 2</a> pode ser encontrada no <a href="http://softdes.insper.edu.br/exercicio/145">[TESTE DE MESA] Lista de contatos</a>. Faça esse teste de mesa para consolidar sua compreensão.</p>
+</div>
+<h2 id="inicializacao-de-dicionarios">Inicialização de dicionários<a class="headerlink" href="#inicializacao-de-dicionarios" title="Permanent link">&para;</a></h2>
+<p>Já vimos que podemos criar um dicionário indicando a chave e o valor separados por dois pontos:</p>
+<div class="highlight"><pre><span></span><code><span class="n">precos</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;chocolate&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;suco&#39;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">}</span>
+</code></pre></div>
+
+<p>E que podemos guardar qualquer coisa em dicionários, inclusive listas ou até outros dicionários:</p>
+<div class="highlight"><pre><span></span><code><span class="n">colecao</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Felipe&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;brontossauro&#39;</span><span class="p">,</span> <span class="s1">&#39;T-Rex&#39;</span><span class="p">],</span> <span class="s1">&#39;Julia&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Euro&#39;</span><span class="p">,</span> <span class="s1">&#39;Dolar&#39;</span><span class="p">,</span> <span class="s1">&#39;Bitcoin&#39;</span><span class="p">]}</span>
+</code></pre></div>
+
+<p>Podemos também criar dicionários vazios de maneira similar às listas:</p>
+<div class="highlight"><pre><span></span><code><span class="n">dicionario_vazio</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Também podemos criar da seguinte maneira</span>
+<span class="n">outro_dicionario_vazio</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</code></pre></div>
+
+<h3 id="tem-append">Tem <code class="highlight"><span class="n">append</span></code>?<a class="headerlink" href="#tem-append" title="Permanent link">&para;</a></h3>
+<p>Em uma lista temos que usar o método <code class="highlight"><span class="o">.</span><span class="n">append</span><span class="p">()</span></code> para colocar um elemento extra (criando uma posição nova):</p>
+<div class="highlight"><pre><span></span><code><span class="n">minha_lista</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">minha_lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Em um dicionário <strong>isso não é necessário</strong>: basta colocar o novo elemento na nova posição (como fazemos quando queremos substituir um elemento em uma lista):</p>
+<div class="highlight"><pre><span></span><code><span class="n">meu_dicionario</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">meu_dicionario</span><span class="p">[</span><span class="s1">&#39;vida universo e tudo mais&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-4">EXERCÍCIO 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Resolva o exercício <a href="http://softdes.insper.edu.br/exercicio/79">79. Lista para dicionário</a>.</p>
+</div>
+<h2 id="verificando-se-uma-chave-existe">Verificando se uma chave existe<a class="headerlink" href="#verificando-se-uma-chave-existe" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Teste o programa a seguir (<strong>se der um erro é porque está certo</strong>):</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="s1">&#39;alface&#39;</span>
+
+<span class="n">eng</span> <span class="o">=</span> <span class="n">port2eng</span><span class="p">[</span><span class="n">port</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> em inglês é </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">eng</span><span class="p">))</span>
+</code></pre></div>
+
+</div>
+<p>O resultado esperado do programa acima é o erro <code class="highlight"><span class="ne">KeyError</span></code>. Por quê?</p>
+<p>A chave <code class="highlight"><span class="s1">&#39;alface&#39;</span></code> não existe no dicionário, então o dicionário não tem um valor para devolver. Por esse motivo é importante verificarmos se uma chave existe no dicionário antes de tentar acessar seu valor. Para isso utilizamos o operador <code class="highlight"><span class="ow">in</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="s1">&#39;alface&#39;</span>
+
+<span class="k">if</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">port2eng</span><span class="p">:</span>
+    <span class="n">eng</span> <span class="o">=</span> <span class="n">port2eng</span><span class="p">[</span><span class="n">port</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> em inglês é </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">eng</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A palavra </span><span class="si">{0}</span><span class="s1"> não existe no dicionário&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Nesse caso, o programa vai imprimir: <code class="highlight"><span class="n">A</span> <span class="n">palavra</span> <span class="n">alface</span> <span class="n">não</span> <span class="n">existe</span> <span class="n">no</span> <span class="n">dicionário</span></code>.</p>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Resolva o exercício <a href="http://softdes.insper.edu.br/exercicio/44">44. Mês para número</a>. Mesmo se você já o tiver resolvido, resolva novamente <strong>utilizando um dicionário, sem <code class="highlight"><span class="k">while</span></code> ou <code class="highlight"><span class="k">for</span></code></strong>.</p>
+</div>
+<h2 id="percorrendo-um-dicionario">Percorrendo um dicionário<a class="headerlink" href="#percorrendo-um-dicionario" title="Permanent link">&para;</a></h2>
+<p>Para percorrer os elementos de um dicionário vamos utilizar exclusivamente o <code class="highlight"><span class="k">for</span></code>. Existem 3 maneiras de percorrer um dicionário utilizando o <code class="highlight"><span class="k">for</span></code>. Para compreender as 3 maneiras, precisamos conhecer alguns métodos disponíveis em dicionários:</p>
+<ol>
+<li>O método <code class="highlight"><span class="o">.</span><span class="n">keys</span><span class="p">()</span></code> (usado como <code class="highlight"><span class="n">dicionario</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></code>) devolve todas as chaves do dicionário;</li>
+<li>O método <code class="highlight"><span class="o">.</span><span class="n">values</span><span class="p">()</span></code> (usado como <code class="highlight"><span class="n">dicionario</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></code>) devolve todos os valores do dicionário;</li>
+<li>O método <code class="highlight"><span class="o">.</span><span class="n">items</span><span class="p">()</span></code> (usado como <code class="highlight"><span class="n">dicionario</span><span class="o">.</span><span class="n">items</span><span class="p">()</span></code>) devolve todos os itens (pares chave-valor) do dicionário.</li>
+</ol>
+<h3 id="opcao-1">Opção 1<a class="headerlink" href="#opcao-1" title="Permanent link">&para;</a></h3>
+<p>A primeira opção para percorrer um dicionário utilizando <code class="highlight"><span class="k">for</span></code> é:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">port2eng</span><span class="p">:</span>
+    <span class="n">eng</span> <span class="o">=</span> <span class="n">port2eng</span><span class="p">[</span><span class="n">port</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> é </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">eng</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Nessa opção, o bloco do <code class="highlight"><span class="k">for</span></code> é executado <strong>para cada chave do dicionário</strong>. Se você precisar do valor associado a essa chave é necessário acessar o valor no dicionário (primeira linha dentro do <code class="highlight"><span class="k">for</span></code>). Ela é equivalente a:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">port2eng</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">eng</span> <span class="o">=</span> <span class="n">port2eng</span><span class="p">[</span><span class="n">port</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> é </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">eng</span><span class="p">))</span>
+</code></pre></div>
+
+<p>O <code class="highlight"><span class="o">.</span><span class="n">keys</span><span class="p">()</span></code> é redundante nesse caso, apresentamos a versão acima por completude. Você pode sempre usar a primeira versão (sem o <code class="highlight"><span class="o">.</span><span class="n">keys</span><span class="p">()</span></code>) sem prejuízo.</p>
+<h3 id="opcao-2">Opção 2<a class="headerlink" href="#opcao-2" title="Permanent link">&para;</a></h3>
+<p>A segunda opção para percorrer um dicionário possui um resultado similar ao <code class="highlight"><span class="k">for</span></code> com listas, ou seja, percorremos somente os valores:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">eng</span> <span class="ow">in</span> <span class="n">port2eng</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">eng</span><span class="p">)</span>
+</code></pre></div>
+
+<p>O programa acima vai imprimir <code class="highlight"><span class="n">kale</span></code>, <code class="highlight"><span class="n">cabbage</span></code>, <code class="highlight"><span class="n">broccoli</span></code> (um em cada linha). Note que nessa opção não temos acesso às chaves.</p>
+<h3 id="opcao-3">Opção 3<a class="headerlink" href="#opcao-3" title="Permanent link">&para;</a></h3>
+<p>Se você está interessado tanto nas chaves quando nos valores, é possível percorrer a lista da seguinte maneira:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">port</span><span class="p">,</span> <span class="n">eng</span> <span class="ow">in</span> <span class="n">port2eng</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> é </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">eng</span><span class="p">))</span>
+</code></pre></div>
+
+<p>As variáveis <code class="highlight"><span class="n">port</span></code> e <code class="highlight"><span class="n">eng</span></code> serão inicializadas simultaneamente com a próxima chave e o próximo valor do dicionário.</p>
+<h2 id="removendo-um-item-do-dicionario">Removendo um item do dicionário<a class="headerlink" href="#removendo-um-item-do-dicionario" title="Permanent link">&para;</a></h2>
+<p>Assim como em listas, podemos remover um item utilizando o operador <code class="highlight"><span class="k">del</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">port2eng</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;couve&#39;</span><span class="p">:</span> <span class="s1">&#39;kale&#39;</span><span class="p">,</span> <span class="s1">&#39;repolho&#39;</span><span class="p">:</span> <span class="s1">&#39;cabbage&#39;</span><span class="p">,</span> <span class="s1">&#39;brocolis&#39;</span><span class="p">:</span> <span class="s1">&#39;broccoli&#39;</span><span class="p">}</span>
+<span class="k">del</span> <span class="n">port2eng</span><span class="p">[</span><span class="s1">&#39;repolho&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">port2eng</span><span class="p">)</span>  <span class="c1"># Vai imprimir {&#39;couve&#39;: &#39;kale&#39;, &#39;brocolis&#39;: &#39;broccoli&#39;}</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicios-adicionais">EXERCÍCIOS ADICIONAIS<a class="headerlink" href="#exercicios-adicionais" title="Permanent link">&para;</a></h3>
+<p>Resolva os exercícios disponíveis no servidor para praticar o uso de dicionários. Algumas sugestões:</p>
+<ul>
+<li><a href="http://softdes.insper.edu.br/exercicio/146">146. Conta ocorrências de palavras</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/147">147. Palavra mais frequente</a></li>
+<li><a href="http://softdes.insper.edu.br/exercicio/148">148. Conta ocorrências de letras</a></li>
+</ul>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../06-for/" title="06 - For" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                06 - For
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                08 - Strings e Fatiamento
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

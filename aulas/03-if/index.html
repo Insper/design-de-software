@@ -1,0 +1,1447 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/03-if/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>03 - Desvios Condicionais (if) - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-desvios-condicionais-if" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              03 - Desvios Condicionais (if)
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        03 - Desvios Condicionais (if)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="03 - Desvios Condicionais (if)" class="md-nav__link md-nav__link--active">
+      03 - Desvios Condicionais (if)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-operador-if" class="md-nav__link">
+    O operador if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    Operadores relacionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores relacionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voltando-para-o-problema-inicial" class="md-nav__link">
+    Voltando para o problema inicial
+  </a>
+  
+    <nav class="md-nav" aria-label="Voltando para o problema inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-o-caso-contrario" class="md-nav__link">
+    E o "caso contrário"?
+  </a>
+  
+    <nav class="md-nav" aria-label="E o "caso contrário"?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agora-vai" class="md-nav__link">
+    Agora vai!
+  </a>
+  
+    <nav class="md-nav" aria-label="Agora vai!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encadeando-condicionais" class="md-nav__link">
+    Encadeando condicionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Encadeando condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-11" class="md-nav__link">
+    EXERCÍCIO 11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-12" class="md-nav__link">
+    EXERCÍCIO 12
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-encadeados" class="md-nav__link">
+    If's encadeados
+  </a>
+  
+    <nav class="md-nav" aria-label="If's encadeados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-13" class="md-nav__link">
+    EXERCÍCIO 13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-14" class="md-nav__link">
+    EXERCÍCIO 14
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores lógicos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-and" class="md-nav__link">
+    Operador and
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador and">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-15" class="md-nav__link">
+    EXERCÍCIO 15
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-or" class="md-nav__link">
+    Operador or
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador or">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6_1" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-not" class="md-nav__link">
+    Operador not
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador not">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-17" class="md-nav__link">
+    EXERCÍCIO 17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumindo" class="md-nav__link">
+    Resumindo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-18" class="md-nav__link">
+    EXERCÍCIO 18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-operador-if" class="md-nav__link">
+    O operador if
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    Operadores relacionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores relacionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voltando-para-o-problema-inicial" class="md-nav__link">
+    Voltando para o problema inicial
+  </a>
+  
+    <nav class="md-nav" aria-label="Voltando para o problema inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-o-caso-contrario" class="md-nav__link">
+    E o "caso contrário"?
+  </a>
+  
+    <nav class="md-nav" aria-label="E o "caso contrário"?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agora-vai" class="md-nav__link">
+    Agora vai!
+  </a>
+  
+    <nav class="md-nav" aria-label="Agora vai!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encadeando-condicionais" class="md-nav__link">
+    Encadeando condicionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Encadeando condicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-11" class="md-nav__link">
+    EXERCÍCIO 11
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-12" class="md-nav__link">
+    EXERCÍCIO 12
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifs-encadeados" class="md-nav__link">
+    If's encadeados
+  </a>
+  
+    <nav class="md-nav" aria-label="If's encadeados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-13" class="md-nav__link">
+    EXERCÍCIO 13
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-14" class="md-nav__link">
+    EXERCÍCIO 14
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores lógicos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-and" class="md-nav__link">
+    Operador and
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador and">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-15" class="md-nav__link">
+    EXERCÍCIO 15
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-or" class="md-nav__link">
+    Operador or
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador or">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6_1" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-not" class="md-nav__link">
+    Operador not
+  </a>
+  
+    <nav class="md-nav" aria-label="Operador not">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-17" class="md-nav__link">
+    EXERCÍCIO 17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumindo" class="md-nav__link">
+    Resumindo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-18" class="md-nav__link">
+    EXERCÍCIO 18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="03-desvios-condicionais-if">03 - Desvios Condicionais (if)<a class="headerlink" href="#03-desvios-condicionais-if" title="Permanent link">&para;</a></h1>
+<p>Nas aulas anteriores desenvolvemos programas que funcionam mais ou menos como uma linha de produção: uma série de comandos são executados um após o outro, sem opção de seguir por um caminho diferente. Você pode argumentar que o <code class="highlight"><span class="nb">input</span><span class="p">()</span></code>, visto na aula passada, permite que o programa se comporte de formas diferentes dependendo do que o usuário digitar no teclado. Mas se olharmos o programa em si, <strong>a sequência de operações executadas</strong> é sempre a mesma. Na aula de hoje veremos como desenvolver programas que, dada uma condição, executam, ou não, um determinado bloco de código.</p>
+<p>Suponha que queremos desenvolver uma função que recebe dois números, <code class="highlight"><span class="n">x</span></code> e <code class="highlight"><span class="n">y</span></code> como argumento e devolve 1 se <code class="highlight"><span class="n">x</span></code> for maior do que <code class="highlight"><span class="n">y</span></code> e 0, caso contrário. A não ser que exista uma fórmula fechada (existe, para alguns casos), precisamos de alguma forma de executar um trecho de código <strong>somente se</strong> <code class="highlight"><span class="n">x</span></code> for maior que <code class="highlight"><span class="n">y</span></code> e outro trecho de código <strong>somente se</strong> essa condição não for verdadeira. Nossa função deve fazer algo parecido com o seguinte:</p>
+<p><img alt="Esquema da função que compara x e y" class="center" src="if.png" width="60%" /></p>
+<p>Para isso vamos precisar do operador <code class="highlight"><span class="k">if</span></code>. Vamos começar com um exemplo curto para entender como ele funciona.</p>
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Teste o seguinte programa:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Começando o programa&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entrou no primeiro if&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entrou no segundo if&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saindo do programa&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>O que foi mostrado no terminal? A saída do terminal está de acordo com o que você esperava que acontecesse?</p>
+</div>
+<h2 id="o-operador-if">O operador <code class="highlight"><span class="k">if</span></code><a class="headerlink" href="#o-operador-if" title="Permanent link">&para;</a></h2>
+<p>O operador <code class="highlight"><span class="k">if</span></code> funciona da seguinte maneira:</p>
+<ul>
+<li>No caso de <code class="highlight"><span class="k">if</span> <span class="kc">True</span><span class="p">:</span></code> o bloco do <code class="highlight"><span class="k">if</span></code> é executado;</li>
+<li>No caso de <code class="highlight"><span class="k">if</span> <span class="kc">False</span><span class="p">:</span></code> o bloco do <code class="highlight"><span class="k">if</span></code> não é executado.</li>
+</ul>
+<p><strong>Importante:</strong> o operador <code class="highlight"><span class="k">if</span></code> <strong>sempre</strong> deve ser procedido por um valor <code class="highlight"><span class="kc">True</span></code> ou <code class="highlight"><span class="kc">False</span></code>. Mas então, para que serve o <code class="highlight"><span class="k">if</span></code>? Ele parece bastante limitado... Para isso precisamos abrir mais um parênteses.</p>
+<h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Teste o programa a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Testa as desigualdades.</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">menor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">maior_ou_igual</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">maior_ou_igual</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Isso sim é um igual e não uma atribuição.</span>
+<span class="n">igual</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">igual</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Testa se é diferente.</span>
+<span class="n">diferente</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferente</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Testa se contém.</span>
+<span class="n">contem_i</span> <span class="o">=</span> <span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Insper&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contem_i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Insper&#39;</span><span class="p">)</span>
+
+<span class="n">contem_I</span> <span class="o">=</span> <span class="s1">&#39;I&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Insper&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contem_I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Insper&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<div class="admonition example">
+<h3 id="exercicio-3">EXERCÍCIO 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Faça o exercício <a href="http://softdes.insper.edu.br/exercicio/111">[TESTE DE MESA] Operadores relacionais</a>.</p>
+<p>Todas as expressões no código acima resultam em um valor booleano (<code class="highlight"><span class="kc">True</span></code> ou <code class="highlight"><span class="kc">False</span></code>). Vimos que o <code class="highlight"><span class="k">if</span></code> só pode ser seguido de um valor booleano. Como as expressões acima resultam em um valor booleano, elas também podem ser utilizadas com o <code class="highlight"><span class="k">if</span></code>!</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-4">EXERCÍCIO 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Considere o programa a seguir. Antes de testar, discuta com um colega qual você espera que seja a saída no terminal. Depois disso, teste o programa e valide a sua hipótese.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Começando o programa&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entrou no primeiro if&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;I&#39;</span> <span class="ow">in</span> <span class="s1">&#39;Insper&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entrou no segundo if&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saindo do programa&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+</div>
+<p>As expressões acima utilizam <em>operadores relacionais</em> para comparar valores e o resultado dessas operações <strong>sempre</strong> é um valor booleano. A tabela a seguir resume os principais operadores relacionais:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operador</strong></th>
+<th><strong>Operação</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="o">==</span></code></td>
+<td>Igual</td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">!=</span></code></td>
+<td>Diferente</td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&gt;</span></code></td>
+<td>Maior</td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&lt;</span></code></td>
+<td>Menor</td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&gt;=</span></code></td>
+<td>Maior ou Igual</td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&lt;=</span></code></td>
+<td>Menor ou Igual</td>
+</tr>
+</tbody>
+</table>
+<h2 id="voltando-para-o-problema-inicial">Voltando para o problema inicial<a class="headerlink" href="#voltando-para-o-problema-inicial" title="Permanent link">&para;</a></h2>
+<p>Agora podemos voltar para o problema inicial: faça uma função que recebe dois números <code class="highlight"><span class="n">x</span></code> e <code class="highlight"><span class="n">y</span></code> e devolve 1, caso <code class="highlight"><span class="n">x</span></code> seja maior que <code class="highlight"><span class="n">y</span></code>, ou zero, caso contrário.</p>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Teste o programa a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">testa_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+            <span class="n">resultado</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">resultado</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">testa_x_y</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Caso o programa acima não tenha funcionado, tente resolver o problema com a ajuda dos seus colegas. Se não conseguirem resolver, conversem com o professor.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Acrescente a seguinte linha ao final do programa acima: <code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="n">testa_x_y</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span></code>. Teste o programa novamente.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Erro de variável não definida</p>
+<p>Um erro semelhante a este deve ter ocorrido: <code class="highlight"><span class="ne">UnboundLocalError</span><span class="p">:</span> <span class="n">local</span> <span class="n">variable</span> <span class="s1">&#39;resultado&#39;</span> <span class="n">referenced</span> <span class="n">before</span> <span class="n">assignment</span></code>. Ele indica que a variável <code class="highlight"><span class="n">resultado</span></code> foi referenciada antes de receber um valor. Antes de ler o próximo parágrafo, tente identificar por conta própria por que esse erro aconteceu.</p>
+<p>Os valores <code class="highlight"><span class="mi">5</span></code> e <code class="highlight"><span class="mi">10</span></code> são recebidos pela função nas variáveis <code class="highlight"><span class="n">x</span></code> e <code class="highlight"><span class="n">y</span></code> respectivamente. Na linha seguinte, <code class="highlight"><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span></code> é avaliado como <code class="highlight"><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">10</span></code>, ou seja, <code class="highlight"><span class="kc">False</span></code>. Nesse caso, o bloco do <code class="highlight"><span class="k">if</span></code> não é executado e a próxima linha é <code class="highlight"><span class="k">return</span> <span class="n">resultado</span></code>, mas qual valor está guardado em <code class="highlight"><span class="n">resultado</span></code>? Como a variável <code class="highlight"><span class="n">resultado</span></code> não foi inicializada <strong>nesta execução da função</strong>, o erro <code class="highlight"><span class="ne">UnboundLocalError</span></code> ocorre.</p>
+</div>
+<h2 id="e-o-caso-contrario">E o "caso contrário"?<a class="headerlink" href="#e-o-caso-contrario" title="Permanent link">&para;</a></h2>
+<p>Para corrigir o erro na nossa função, vamos voltar à descrição do problema inicial: uma função que devolve 1 caso <code class="highlight"><span class="n">x</span></code> seja maior que <code class="highlight"><span class="n">y</span></code> ou zero, caso contrário. Precisamos tratar esse <em>"caso contrário"</em>. Para isso existe o operador <code class="highlight"><span class="k">else</span></code>, que significa, literalmente, <em>"caso contrário"</em>.</p>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>Teste o programa a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Digite um número: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">numero</span> <span class="o">==</span> <span class="mi">42</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resposta para a vida, o universo e tudo mais&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Um número qualquer&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Se você não sabe o que a primeira linha do código acima faz, revise o handout da aula passada antes de prosseguir.</p>
+</div>
+<p>Faça alguns testes variando a entrada para verificar se o programa faz o que você espera. O operador <code class="highlight"><span class="k">else</span></code> captura todos os casos para os quais a condição do <code class="highlight"><span class="k">if</span></code> é falsa.</p>
+</div>
+<h2 id="agora-vai">Agora vai!<a class="headerlink" href="#agora-vai" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<h3 id="exercicio-8">EXERCÍCIO 8<a class="headerlink" href="#exercicio-8" title="Permanent link">&para;</a></h3>
+<p>Agora sim, podemos terminar nossa função. Modifique a função do <a href="#exercicio-6">exercício 6</a> para que o programa volte a funcionar.</p>
+</div>
+<h2 id="encadeando-condicionais">Encadeando condicionais<a class="headerlink" href="#encadeando-condicionais" title="Permanent link">&para;</a></h2>
+<p>É possível testar uma nova condição caso a anterior falhe, utilizando o operador <code class="highlight"><span class="k">elif</span></code>. Ele pode ser lido como <em>"senão, se"</em>. Vamos trabalhar com um exemplo.</p>
+<div class="admonition example">
+<h3 id="exercicio-9">EXERCÍCIO 9<a class="headerlink" href="#exercicio-9" title="Permanent link">&para;</a></h3>
+<p>Teste o programa a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Digite um número: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">numero</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;0 não é nem par, nem ímpar&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Resto da divisão de número por 2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> é par&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> é ímpar&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero</span><span class="p">))</span>
+</code></pre></div>
+
+<p>O que deve acontecer se o número <code class="highlight"><span class="mi">0</span></code> for digitado? E o número <code class="highlight"><span class="mi">11</span></code>? E o número <code class="highlight"><span class="mi">10000</span></code>?</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-10">EXERCÍCIO 10<a class="headerlink" href="#exercicio-10" title="Permanent link">&para;</a></h3>
+<p>Se <code class="highlight"><span class="n">numero</span></code> for igual a zero, <code class="highlight"><span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span></code> é <code class="highlight"><span class="kc">True</span></code>. Discuta com algum colega e valide com o professor: por que quando o usuário digita o número zero o programa não imprime <code class="highlight"><span class="mi">0</span> <span class="n">é</span> <span class="n">par</span></code>?</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-11">EXERCÍCIO 11<a class="headerlink" href="#exercicio-11" title="Permanent link">&para;</a></h3>
+<p>Discuta com um colega: por que podemos utilizar o <code class="highlight"><span class="k">else</span></code> para imprimir que o número é ímpar? Em outra palavras, por que não precisamos de um <code class="highlight"><span class="k">elif</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span></code>?</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-12">EXERCÍCIO 12<a class="headerlink" href="#exercicio-12" title="Permanent link">&para;</a></h3>
+<p>Altere a função do <a href="#exercicio-8">exercício 8</a> para que ela devolva <code class="highlight"><span class="mi">1</span></code> se <code class="highlight"><span class="n">x</span></code> for maior do que <code class="highlight"><span class="n">y</span></code>, <code class="highlight"><span class="mi">0</span></code> se <code class="highlight"><span class="n">x</span></code> for igual a <code class="highlight"><span class="n">y</span></code> ou <code class="highlight"><span class="o">-</span><span class="mi">1</span></code>, se <code class="highlight"><span class="n">x</span></code> for menor do que <code class="highlight"><span class="n">y</span></code>.</p>
+</div>
+<h2 id="ifs-encadeados">If's encadeados<a class="headerlink" href="#ifs-encadeados" title="Permanent link">&para;</a></h2>
+<p>Dentro do bloco de um <code class="highlight"><span class="k">if</span></code>, <code class="highlight"><span class="k">elif</span></code> ou <code class="highlight"><span class="k">else</span></code>, podemos ter qualquer código Python válido. Inclusive outros <code class="highlight"><span class="k">if</span></code>'s. Considere a função a seguir, que, dada a idade de uma pessoa, devolve uma string que indica em que países essa pessoa é considerada maior de idade.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">testa_maioridade</span><span class="p">(</span><span class="n">idade</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">21</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Maior nos EUA e BRASIL&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Maior no BRASIL&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Menor de idade&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">testa_maioridade</span><span class="p">(</span><span class="mi">17</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">testa_maioridade</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">testa_maioridade</span><span class="p">(</span><span class="mi">21</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-13">EXERCÍCIO 13<a class="headerlink" href="#exercicio-13" title="Permanent link">&para;</a></h3>
+<p>Faça o teste de mesa no exercício <a href="http://softdes.insper.edu.br/exercicio/112">[TESTE DE MESA] Testa maioridade</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-14">EXERCÍCIO 14<a class="headerlink" href="#exercicio-14" title="Permanent link">&para;</a></h3>
+<p>Modifique a função acima para utilizar <strong>exatamente</strong> um <code class="highlight"><span class="k">if</span></code>, um <code class="highlight"><span class="k">elif</span></code> e um <code class="highlight"><span class="k">else</span></code>.</p>
+</div>
+<h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
+<h2 id="operador-and">Operador <code class="highlight"><span class="ow">and</span></code><a class="headerlink" href="#operador-and" title="Permanent link">&para;</a></h2>
+<p>Nos exercícios anteriores vimos como testar uma única condição, mas em muitos casos pode ser útil testar mais do que uma condição de uma vez. Por exemplo, um arco-íris ocorre se <em>está chovendo</em> <strong>e</strong> <em>fazendo sol</em>, simultaneamente. Ou seja:</p>
+<div class="highlight"><pre><span></span><code><span class="n">esta_chovendo</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">faz_sol</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">esta_chovendo</span> <span class="ow">and</span> <span class="n">faz_sol</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Arco-íris!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sem arco-íris. Alguma das condições não foi satisfeita.&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-15">EXERCÍCIO 15<a class="headerlink" href="#exercicio-15" title="Permanent link">&para;</a></h3>
+<p>Teste o programa acima, modificando os valores de <code class="highlight"><span class="n">esta_chovendo</span></code> e <code class="highlight"><span class="n">faz_sol</span></code>. Existem 4 combinações possíveis. Teste todas e verifique se a saída no terminal corresponde ao que você esperava.</p>
+</div>
+<h2 id="operador-or">Operador <code class="highlight"><span class="ow">or</span></code><a class="headerlink" href="#operador-or" title="Permanent link">&para;</a></h2>
+<p>Em outros casos é suficiente que <em>pelo menos uma das condições for satisfeita</em>. Por exemplo: uma pessoa paga meia entrada no teatro se <em>for estudante</em> <strong>ou</strong> <em>for idosa</em>. Ou seja:</p>
+<div class="highlight"><pre><span></span><code><span class="n">estudante</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">idoso</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">estudante</span> <span class="ow">or</span> <span class="n">idoso</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Paga meia!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Paga inteira...&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-6_1">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6_1" title="Permanent link">&para;</a></h3>
+<p>Teste o programa acima, modificando os valores de <code class="highlight"><span class="n">estudante</span></code> e <code class="highlight"><span class="n">idoso</span></code>. Existem 4 combinações possíveis. Teste todas e verifique se a saída no terminal corresponde ao que você esperava.</p>
+</div>
+<h2 id="operador-not">Operador <code class="highlight"><span class="ow">not</span></code><a class="headerlink" href="#operador-not" title="Permanent link">&para;</a></h2>
+<p>Também existe a possibilidade de querermos considerar os casos em que uma condição é falsa. Por exemplo: sempre tomo sopa quando o dia não está quente.</p>
+<div class="highlight"><pre><span></span><code><span class="n">esta_quente</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">esta_quente</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vou tomar sopa&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-17">EXERCÍCIO 17<a class="headerlink" href="#exercicio-17" title="Permanent link">&para;</a></h3>
+<p>Teste o programa acima, modificando os valores de <code class="highlight"><span class="n">esta_quente</span></code>. Existem 2 possibilidades. Teste ambas e verifique se a saída no terminal corresponde ao que você esperava.</p>
+</div>
+<h3 id="resumindo">Resumindo<a class="headerlink" href="#resumindo" title="Permanent link">&para;</a></h3>
+<p>Vamos resumir o comportamento dos operadores <code class="highlight"><span class="ow">and</span></code>, <code class="highlight"><span class="ow">or</span></code> e <code class="highlight"><span class="ow">not</span></code>:</p>
+<ul>
+<li><strong><code class="highlight"><span class="ow">and</span></code></strong>: devolve <code class="highlight"><span class="kc">True</span></code> se <strong>AMBOS</strong> os valores forem verdadeiros;</li>
+<li><strong><code class="highlight"><span class="ow">or</span></code></strong>: devolve <code class="highlight"><span class="kc">True</span></code> se <strong>PELO MENOS UM</strong> dos valores forem verdadeiros;</li>
+<li><strong><code class="highlight"><span class="ow">not</span></code></strong>: inverte de <code class="highlight"><span class="kc">True</span></code> para <code class="highlight"><span class="kc">False</span></code> e vice-versa.</li>
+</ul>
+<div class="admonition example">
+<h3 id="exercicio-18">EXERCÍCIO 18<a class="headerlink" href="#exercicio-18" title="Permanent link">&para;</a></h3>
+<p>Faça uma função que recebe os lados de um triângulo e retorna se ele é equilátero, isósceles ou escaleno (se não sabe alguma dessas definições, procure na internet). Teste sua resposta no <a href="http://softdes.insper.edu.br/exercicio/19">exercício 19</a> do servidor.</p>
+<p>Você pode implementar essa função de diversas maneiras diferentes. Implemente as seguintes versões e compare o código gerado para cada uma:</p>
+<ol>
+<li>Teste se o triângulo é equilátero, depois se é isósceles e depois se é escaleno;</li>
+<li>Teste se o triângulo é equilátero, depois se é escaleno e depois se é isósceles;</li>
+<li>Teste se o triângulo é isósceles, depois se é equilátero e depois se é escaleno;</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Erro comum</p>
+<p>Assuma que as variáveis <code class="highlight"><span class="n">lado1</span></code>, <code class="highlight"><span class="n">lado2</span></code> e <code class="highlight"><span class="n">lado3</span></code> guardam as medidas dos lados do triângulo. Um erro comum neste exercício é tentar combinar duas comparações de maneira incompleta. Por exemplo, para verificar se um triângulo é isósceles:</p>
+<p><code class="highlight"><span class="k">if</span> <span class="n">lado1</span> <span class="o">==</span> <span class="n">lado2</span> <span class="ow">and</span> <span class="o">!=</span> <span class="n">lado3</span></code></p>
+<p>Apesar de ser razoável achar que esse código seria válido ele <strong>não funciona</strong>. Lembre-se que os operadores lógicos (<code class="highlight"><span class="ow">and</span></code> e <code class="highlight"><span class="ow">or</span></code>) combinam dois valores booleanos, portanto <strong>cada lado do operador deve ser uma expressão completa</strong>. Assim, o correto seria:</p>
+<p><code class="highlight"><span class="k">if</span> <span class="n">lado1</span> <span class="o">==</span> <span class="n">lado2</span> <span class="ow">and</span> <span class="n">lado1</span> <span class="o">!=</span> <span class="n">lado3</span></code></p>
+</div>
+</div>
+<h3 id="exercicios-adicionais">EXERCÍCIOS ADICIONAIS<a class="headerlink" href="#exercicios-adicionais" title="Permanent link">&para;</a></h3>
+<p>Se acabar os exercícios propostos neste handout, resolva os outros exercícios disponíveis no <a href="http://softdes.insper.edu.br/">servidor</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../02-io/" title="02 - Input e String" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                02 - Input e String
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                04 - Laços de Repetição (while)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

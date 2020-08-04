@@ -1,0 +1,1056 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/05-listas/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>05 - Listas - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#05-listas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              05 - Listas
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        05 - Listas
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="05 - Listas" class="md-nav__link md-nav__link--active">
+      05 - Listas
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-se-fosse-um-mooc-massive-open-online-course" class="md-nav__link">
+    E se fosse um MOOC (Massive Open Online Course)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-tipo-list" class="md-nav__link">
+    O tipo list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cabe-tudo-em-uma-lista" class="md-nav__link">
+    Cabe tudo em uma lista!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-elementos-de-uma-lista" class="md-nav__link">
+    Acessando elementos de uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Acessando elementos de uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descobrindo-o-numero-de-elementos-em-uma-lista" class="md-nav__link">
+    Descobrindo o número de elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Descobrindo o número de elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituindo-elementos-em-uma-lista" class="md-nav__link">
+    Substituindo elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Substituindo elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicionando-e-removendo-elementos-em-uma-lista" class="md-nav__link">
+    Adicionando e removendo elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Adicionando e removendo elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soma-e-multiplicacao-de-listas" class="md-nav__link">
+    Soma e multiplicação de listas?
+  </a>
+  
+    <nav class="md-nav" aria-label="Soma e multiplicação de listas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e-se-fosse-um-mooc-massive-open-online-course" class="md-nav__link">
+    E se fosse um MOOC (Massive Open Online Course)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-tipo-list" class="md-nav__link">
+    O tipo list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cabe-tudo-em-uma-lista" class="md-nav__link">
+    Cabe tudo em uma lista!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acessando-elementos-de-uma-lista" class="md-nav__link">
+    Acessando elementos de uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Acessando elementos de uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descobrindo-o-numero-de-elementos-em-uma-lista" class="md-nav__link">
+    Descobrindo o número de elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Descobrindo o número de elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substituindo-elementos-em-uma-lista" class="md-nav__link">
+    Substituindo elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Substituindo elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicionando-e-removendo-elementos-em-uma-lista" class="md-nav__link">
+    Adicionando e removendo elementos em uma lista
+  </a>
+  
+    <nav class="md-nav" aria-label="Adicionando e removendo elementos em uma lista">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-9" class="md-nav__link">
+    EXERCÍCIO 9
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soma-e-multiplicacao-de-listas" class="md-nav__link">
+    Soma e multiplicação de listas?
+  </a>
+  
+    <nav class="md-nav" aria-label="Soma e multiplicação de listas?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-10" class="md-nav__link">
+    EXERCÍCIO 10
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-adicionais" class="md-nav__link">
+    EXERCÍCIOS ADICIONAIS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="05-listas">05 - Listas<a class="headerlink" href="#05-listas" title="Permanent link">&para;</a></h1>
+<p>O objetivo de aprendizado deste handout é que, ao final da atividade, você seja capaz de utilizar listas em seus programas em conjunto com as estruturas que vimos nas aulas anteriores (<code class="highlight"><span class="nb">input</span></code>, <code class="highlight"><span class="k">if</span></code>, <code class="highlight"><span class="k">while</span></code>, etc.). Vamos começar com um aquecimento.</p>
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Utilizando apenas o que já vimos sobre Python, implemente um programa que pergunta para o usuário a nota de 3 alunos e armazena cada nota em uma variável. Depois de receber os 3 valores, imprima as notas e a média. Para o usuário, seu programa deve se comportar da seguinte maneira caso ele digite <code class="highlight"><span class="mi">8</span></code>, <code class="highlight"><span class="mi">2</span></code> e <code class="highlight"><span class="mi">8</span></code> (esse é um exemplo de saída do terminal):</p>
+<div class="highlight"><pre><span></span><code>Digite a nota 1: 8
+Digite a nota 2: 2
+Digite a nota 3: 8
+Notas digitadas:
+8
+2
+8
+Média: 6
+</code></pre></div>
+
+</div>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Altere seu programa do exercício 1 para que ele pergunte 6 notas ao invés de 3. Note que será necessário alterar seu código que imprime todas as notas digitadas e a média. Dica: a solução envolve basicamente copiar e colar código.</p>
+</div>
+<h2 id="e-se-fosse-um-mooc-massive-open-online-course">E se fosse um MOOC (Massive Open Online Course)?<a class="headerlink" href="#e-se-fosse-um-mooc-massive-open-online-course" title="Permanent link">&para;</a></h2>
+<p>O que aconteceria se ao invés de 6 notas tivéssemos 10000 notas? Ainda seria possível (mas definitivamente não recomendável) copiar e colar as mesmas linhas para adaptar o código para essa nova situação. Pior, sempre é possível que o usuário precise de 1 nota a mais e você teria que alterar o seu programa novamente. O problema é que o programa escrito dessa forma pode armazenar uma <strong>quantidade fixa</strong> de notas. Seria interessante termos alguma forma de armazenar uma <strong>quantidade variável</strong> de notas, que fosse aumentando conforme a demanda. É aí que entram as listas em Python.</p>
+<h2 id="o-tipo-list">O tipo <code class="highlight"><span class="nb">list</span></code><a class="headerlink" href="#o-tipo-list" title="Permanent link">&para;</a></h2>
+<p>Listas são uma das mais formas mais comuns de se organizar uma sequência de dados em Python. Para acessar um dado armazenado em uma lista utilizamos a sua posição, ou índice. Por exemplo, o código a seguir cria uma lista com os números <code class="highlight"><span class="mi">3</span></code>, <code class="highlight"><span class="mi">5</span></code>, <code class="highlight"><span class="mi">2</span></code>, <code class="highlight"><span class="mi">4</span></code> e <code class="highlight"><span class="mi">9</span></code> e a armazena em uma variável chamada <code class="highlight"><span class="n">a</span></code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Lembrando que em programação começamos a contar a partir de zero, o elemento no índice 0 (zero) é o primeiro elemento (número <code class="highlight"><span class="mi">3</span></code>), no índice 1 é o segundo elemento (número <code class="highlight"><span class="mi">5</span></code>), no índice 2 é o terceiro elemento (número <code class="highlight"><span class="mi">2</span></code>) e assim por diante. Note que <strong>o último índice possível é igual ao tamanho da lista subtraído por 1</strong>. No nosso exemplo, o índice do último elemento é 4 e a lista tem tamanho 5.</p>
+<p><img alt="Os elementos da lista são acessados através dos índices." class="center" src="exemplo_lista.png" width="50%" /></p>
+<h2 id="cabe-tudo-em-uma-lista">Cabe tudo em uma lista!<a class="headerlink" href="#cabe-tudo-em-uma-lista" title="Permanent link">&para;</a></h2>
+<p>Uma característica importante de listas é que elas podem guardar qualquer tipo de dados disponível no Python. Basta colocar os itens entre <strong>colchetes</strong> e separá-los por <strong>vírgulas</strong>. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_de_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;abobora&#39;</span><span class="p">,</span> <span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;jaca&#39;</span><span class="p">]</span>
+<span class="n">lista_de_ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># Sim, pode ter elementos repetidos</span>
+<span class="n">lista_de_floats</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">1.00001</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Podemos inclusive criar listas vazias:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sacola_de_compras</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+
+<p>Mas qual é a utilidade de criar uma lista vazia? Você se lembra que comentamos acima sobre armazenar uma quantidade variável de elementos? Em uma lista é possível adicionar novos elementos conforme a necessidade.</p>
+<h2 id="acessando-elementos-de-uma-lista">Acessando elementos de uma lista<a class="headerlink" href="#acessando-elementos-de-uma-lista" title="Permanent link">&para;</a></h2>
+<p>Para acessar um elemento de uma lista utilizamos a sua posição (índice) entre colchetes. Por exemplo, para acessar o terceiro elemento da lista <code class="highlight"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span></code> utilizamos o comando <code class="highlight"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code>.</p>
+<div class="admonition example">
+<h3 id="exercicio-3">EXERCÍCIO 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/122">[TESTE DE MESA] Imprimindo elementos de uma lista</a>.</p>
+</div>
+<h2 id="descobrindo-o-numero-de-elementos-em-uma-lista">Descobrindo o número de elementos em uma lista<a class="headerlink" href="#descobrindo-o-numero-de-elementos-em-uma-lista" title="Permanent link">&para;</a></h2>
+<p>Podemos utilizar a função <code class="highlight"><span class="nb">len</span><span class="p">()</span></code> para descobrir o tamanho de uma lista, ou seja, quantos elementos estão disponíveis nessa lista.</p>
+<div class="admonition example">
+<h3 id="exercicio-4">EXERCÍCIO 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Sabendo disso, utilize seus conhecimentos de <code class="highlight"><span class="k">while</span></code> da aula passada para resolver o <a href="http://softdes.insper.edu.br/exercicio/123">[TESTE DE MESA] Imprimindo elementos de uma lista com while</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Resolva o <a href="http://softdes.insper.edu.br/exercicio/40">exercício 40 do servidor</a>. Dica: será necessário criar pelo menos duas variáveis auxiliares, uma para guardar o índice e outra para guardar a soma.</p>
+</div>
+<h2 id="substituindo-elementos-em-uma-lista">Substituindo elementos em uma lista<a class="headerlink" href="#substituindo-elementos-em-uma-lista" title="Permanent link">&para;</a></h2>
+<p>Podemos também substituir o elemento em um índice específico da lista. Por exemplo, na lista <code class="highlight"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span></code> podemos substituir o segundo elemento pelo número 3 da seguinte maneira:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># O print a seguir vai imprimir a lista corrigida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Sabendo disso, resolva o <a href="http://softdes.insper.edu.br/exercicio/124">[TESTE DE MESA] Corrigindo a lista de primos</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>Resolva o <a href="http://softdes.insper.edu.br/exercicio/41">exercício 41 do servidor</a>.</p>
+</div>
+<h2 id="adicionando-e-removendo-elementos-em-uma-lista">Adicionando e removendo elementos em uma lista<a class="headerlink" href="#adicionando-e-removendo-elementos-em-uma-lista" title="Permanent link">&para;</a></h2>
+<p>Comentamos anteriormente que a lista pode guardar uma quantidade arbitrária de elementos. Essa quantidade pode, inclusive, mudar ao longo do tempo. Podemos adicionar e remover elementos a uma lista com o operador <code class="highlight"><span class="k">del</span></code> e a função <code class="highlight"><span class="o">.</span><span class="n">append</span><span class="p">()</span></code>.</p>
+<div class="admonition example">
+<h3 id="exercicio-8">EXERCÍCIO 8<a class="headerlink" href="#exercicio-8" title="Permanent link">&para;</a></h3>
+<p>Para entender como esses comandos funcionam, faça o <a href="http://softdes.insper.edu.br/exercicio/125">[TESTE DE MESA] Adicionando e removendo elementos de uma lista</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-9">EXERCÍCIO 9<a class="headerlink" href="#exercicio-9" title="Permanent link">&para;</a></h3>
+<p>Resolva o <a href="http://softdes.insper.edu.br/exercicio/42">exercício 42 do servidor</a>.</p>
+</div>
+<h2 id="soma-e-multiplicacao-de-listas">Soma e multiplicação de listas?<a class="headerlink" href="#soma-e-multiplicacao-de-listas" title="Permanent link">&para;</a></h2>
+<p>Existe a opção de somarmos uma lista a outra. O resultado é <strong>uma nova lista</strong> com os elementos de ambas. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lista_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lista_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">lista_1_e_2</span> <span class="o">=</span> <span class="n">lista_1</span> <span class="o">+</span> <span class="n">lista_2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_1_e_2</span><span class="p">)</span>  <span class="c1"># Vai imprimir [1, 2, 3, 4, 5, 6]</span>
+
+<span class="n">lista_2_e_1</span> <span class="o">=</span> <span class="n">lista_2</span> <span class="o">+</span> <span class="n">lista_1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_2_e_1</span><span class="p">)</span> <span class="c1"># Vai imprimir [4, 5, 6, 1, 2, 3]</span>
+</code></pre></div>
+
+<p>Além disso, também temos a opção de multiplicar uma lista por um número inteiro. Lembrando da matemática, multiplicar um número <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> por outro número <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> é o mesmo que somar <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> com ele mesmo <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> vezes. Ao multiplicarmos uma lista por um número temos um resultado análogo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">numeros_vezes_3</span> <span class="o">=</span> <span class="n">numeros</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># Análogo a: numeros + numeros + numeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numeros_vezes_3</span><span class="p">)</span>  <span class="c1"># Vai imprimir [1, 2, 3, 1, 2, 3, 1, 2, 3]</span>
+</code></pre></div>
+
+<p><strong>Observação:</strong> esse comportamento é <strong>muito</strong> semelhante às somas e <a href="/aulas/02-io/#operacoes-com-strings">multiplicações de strings</a>.</p>
+<div class="admonition example">
+<h3 id="exercicio-10">EXERCÍCIO 10<a class="headerlink" href="#exercicio-10" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/126">[TESTE DE MESA] Soma e multiplicação de listas</a>.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicios-adicionais">EXERCÍCIOS ADICIONAIS<a class="headerlink" href="#exercicios-adicionais" title="Permanent link">&para;</a></h3>
+<p>Como sempre, resolva os outros exercícios disponíveis no <a href="http://softdes.insper.edu.br/">servidor</a>.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                04 - Laços de Repetição (while)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06-for/" title="06 - For" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                06 - For
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>

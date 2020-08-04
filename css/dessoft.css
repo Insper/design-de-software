@@ -1,0 +1,15 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.md-typeset h3.admonition-title::before {
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    min-width: 100%;
+  }
+}
