@@ -5,7 +5,8 @@ let en_pt = {
     "Tip": "Dica",
     "Question": "Pergunta",
     "Warning": "Cuidado",
-    "Example": "Tarefa"
+    "Example": "Tarefa",
+    "Info": "Observação",
 };
 
 let admonitions_to_translate = document.querySelectorAll(".admonition-title");

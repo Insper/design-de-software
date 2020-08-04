@@ -32,6 +32,14 @@ nav:
         - 'Turma C': turma-c.md
     - Aulas:
         - '02 - Input e String': aulas/02-io.md
+        - '03 - Desvios Condicionais (if)': aulas/03-if.md
+        - '04 - Laços de Repetição (while)': aulas/04-while.md
+        - '05 - Listas': aulas/05-listas.md
+        - '06 - For': aulas/06-for.md
+        - '07 - Dicionários': aulas/07-dicionarios.md
+        - '08 - Strings e Fatiamento': aulas/08-strings.md
+        - '09 - Arquivos': aulas/09-arquivos.md
+        - '10 - PyGame': aulas/10-pygame.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
