@@ -1,6 +1,6 @@
-# Turma A
+# Turma B
 
-**Professor:** Andrew Kurauchi
+**Professor:** Andrew Kurauchi (andrewtnk@insper.edu.br)
 
 ## Horários
 
