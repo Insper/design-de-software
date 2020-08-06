@@ -31,6 +31,7 @@ nav:
         - 'Turma B': turma-b.md
         - 'Turma C': turma-c.md
     - Aulas:
+        - '01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções': aulas/01-funcoes.md
         - '02 - Input e String': aulas/02-io.md
         - '03 - Desvios Condicionais (if)': aulas/03-if.md
         - '04 - Laços de Repetição (while)': aulas/04-while.md
@@ -40,6 +41,12 @@ nav:
         - '08 - Strings e Fatiamento': aulas/08-strings.md
         - '09 - Arquivos': aulas/09-arquivos.md
         - '10 - PyGame': aulas/10-pygame.md
+    - Tutoriais:
+        - 'Navegando pelo terminal':
+            - 'Windows': tutoriais/terminal-win.md
+            - 'macOS': tutoriais/terminal-macos.md
+    - Dicas:
+        - 'Buscando Ajuda': dicas/buscando-ajuda.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
