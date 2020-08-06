@@ -1,0 +1,1414 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/design-de-software/aulas/01-funcoes/">
+      
+      
+        <meta name="author" content="Andrew Kurauchi, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.2">
+    
+    
+      
+        <title>01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções - Design de Software - Insper 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.25b81cc6.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.80a78273.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+      <link rel="stylesheet" href="../../css/dessoft.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01-introducao-ao-python-variaveis-operacoes-matematicas-e-funcoes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/design-de-software/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/design-de-software/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/design-de-software/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> Design de Software </div>
+    <div class="professor"> Andrew Kurauchi, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/design-de-software/"
+      title="Design de Software - Insper 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="Design de Software - Insper 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Design de Software - Insper 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/design-de-software/" title="Design de Software - Insper 2020/2" class="md-nav__button md-logo" aria-label="Design de Software - Insper 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Design de Software - Insper 2020/2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Turmas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Turmas" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Turmas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-a/" title="Turma A" class="md-nav__link">
+      Turma A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-b/" title="Turma B" class="md-nav__link">
+      Turma B
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../turma-c/" title="Turma C" class="md-nav__link">
+      Turma C
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções" class="md-nav__link md-nav__link--active">
+      01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-python" class="md-nav__link">
+    O Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacao" class="md-nav__link">
+    Instalação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ola-mundo" class="md-nav__link">
+    Olá Mundo!
+  </a>
+  
+    <nav class="md-nav" aria-label="Olá Mundo!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendendo-nosso-primeiro-programa" class="md-nav__link">
+    Entendendo nosso primeiro programa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-matematicas" class="md-nav__link">
+    Operações matemáticas
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações matemáticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    Variáveis
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    Funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamando-funcoes-em-python" class="md-nav__link">
+    Chamando funções em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Chamando funções em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-io/" title="02 - Input e String" class="md-nav__link">
+      02 - Input e String
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03-if/" title="03 - Desvios Condicionais (if)" class="md-nav__link">
+      03 - Desvios Condicionais (if)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-while/" title="04 - Laços de Repetição (while)" class="md-nav__link">
+      04 - Laços de Repetição (while)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-listas/" title="05 - Listas" class="md-nav__link">
+      05 - Listas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06-for/" title="06 - For" class="md-nav__link">
+      06 - For
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07-dicionarios/" title="07 - Dicionários" class="md-nav__link">
+      07 - Dicionários
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08-strings/" title="08 - Strings e Fatiamento" class="md-nav__link">
+      08 - Strings e Fatiamento
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09-arquivos/" title="09 - Arquivos" class="md-nav__link">
+      09 - Arquivos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10-pygame/" title="10 - PyGame" class="md-nav__link">
+      10 - PyGame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Tutoriais
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Tutoriais" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Tutoriais
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Navegando pelo terminal
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Navegando pelo terminal" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Navegando pelo terminal
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutoriais/terminal-win/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutoriais/terminal-macos/" title="macOS" class="md-nav__link">
+      macOS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Dicas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dicas" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Dicas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dicas/buscando-ajuda/" title="Buscando Ajuda" class="md-nav__link">
+      Buscando Ajuda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-python" class="md-nav__link">
+    O Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacao" class="md-nav__link">
+    Instalação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ola-mundo" class="md-nav__link">
+    Olá Mundo!
+  </a>
+  
+    <nav class="md-nav" aria-label="Olá Mundo!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-1" class="md-nav__link">
+    EXERCÍCIO 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entendendo-nosso-primeiro-programa" class="md-nav__link">
+    Entendendo nosso primeiro programa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-matematicas" class="md-nav__link">
+    Operações matemáticas
+  </a>
+  
+    <nav class="md-nav" aria-label="Operações matemáticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-2" class="md-nav__link">
+    EXERCÍCIO 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-3" class="md-nav__link">
+    EXERCÍCIO 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis" class="md-nav__link">
+    Variáveis
+  </a>
+  
+    <nav class="md-nav" aria-label="Variáveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-4" class="md-nav__link">
+    EXERCÍCIO 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-5" class="md-nav__link">
+    EXERCÍCIO 5
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    Funções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chamando-funcoes-em-python" class="md-nav__link">
+    Chamando funções em Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Chamando funções em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-6" class="md-nav__link">
+    EXERCÍCIO 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-7" class="md-nav__link">
+    EXERCÍCIO 7
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicio-8" class="md-nav__link">
+    EXERCÍCIO 8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="01-introducao-ao-python-variaveis-operacoes-matematicas-e-funcoes">01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções<a class="headerlink" href="#01-introducao-ao-python-variaveis-operacoes-matematicas-e-funcoes" title="Permanent link">&para;</a></h1>
+<h2 id="o-python">O Python<a class="headerlink" href="#o-python" title="Permanent link">&para;</a></h2>
+<p>O nome Python teve a sua origem no grupo humorístico britânico <a href="https://pt.wikipedia.org/wiki/Monty_Python">Monty Python</a> (se tiver curiosidade, é possível encontrar alguns títulos no Netflix).</p>
+<p><img alt="Fonte: https://www.esquire.com/entertainment/movies/a25270/monty-python-meaning-of-life-review/" class="center" src="/aulas/01-funcoes/monty-python.jpg" /></p>
+<p>A linguagem Python foi desenvolvida por <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> no início da década de 1990. Apesar de ser uma linguagem relativamente antiga, o seu uso apresentou <a href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">um crescimento significativo nos últimos anos</a> e é hoje uma das linguagens de programação mais populares no mundo, sendo <a href="https://www.python.org/about/quotes/">amplamente utilizada por grandes empresas</a> como Google, Netflix, Nasa, Dropbox, e muitos outros.</p>
+<p>Neste primeiro <em>handout</em> vamos desenvolver nossos primeiros programas em Python, utilizando os seguintes conceitos básicos de programação: operações matemáticas, variáveis e funções.</p>
+<h2 id="instalacao">Instalação<a class="headerlink" href="#instalacao" title="Permanent link">&para;</a></h2>
+<p>Existem diversas formas de instalar o Python. Recomendamos a instalação através do Anaconda, que já inclui o Python e alguns módulos adicionais que serão úteis em outras disciplinas. Para isso, acesse o link de instalação referente ao seu sistema operacional:</p>
+<ul>
+<li>Windows: <a href="https://docs.anaconda.com/anaconda/install/windows/">https://docs.anaconda.com/anaconda/install/windows/</a></li>
+<li>macOS: <a href="https://docs.anaconda.com/anaconda/install/mac-os/">https://docs.anaconda.com/anaconda/install/mac-os/</a></li>
+<li>Linux: <a href="https://docs.anaconda.com/anaconda/install/linux/">https://docs.anaconda.com/anaconda/install/linux/</a></li>
+</ul>
+<p>Para escrever e editar o nosso código será necessário utilizarmos um editor de código. Existem diversas alternativas, mas nesta disciplina focaremos no <a href="https://code.visualstudio.com/">Visual Studio Code</a> (VS Code), um dos editores mais populares atualmente. Veremos que o código é essencialmente texto, então poderíamos utilizar qualquer editor de texto disponível, mas editores como o VS Code possuem diversas ferramentas que facilitam o desenvolvimento.</p>
+<p>É provável que o VS Code já tenha sido instalado juntamente com o Anaconda. Para verificar, abra o Anaconda Navigator (um programa instalado com o Anaconda), procure pelo VS Code e clique em <em>Launch</em>. Se ele mostrar a opção de instalar, você pode instalá-lo pelo próprio Anaconda Navigator. Caso contrário, você pode fazer o download no seguinte link: <a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></p>
+<h2 id="ola-mundo">Olá Mundo!<a class="headerlink" href="#ola-mundo" title="Permanent link">&para;</a></h2>
+<p>Quando vamos aprender uma nova linguagem de programação é comum escrevermos um primeiro programa que, ao ser executado, mostra na tela o texto <em>Hello, world!</em> ("Olá, mundo!"). Apesar de ser um programa muito simples, ele já nos permite começar a compreender dois aspectos da linguagem:</p>
+<ol>
+<li>Qual é a "cara" da linguagem, ou seja, qual é a estrutura básica do código.</li>
+<li>Como executar um programa escrito nessa linguagem.</li>
+</ol>
+<p>Então mãos à obra!</p>
+<div class="admonition example">
+<h3 id="exercicio-1">EXERCÍCIO 1<a class="headerlink" href="#exercicio-1" title="Permanent link">&para;</a></h3>
+<p>Siga os passos a seguir para escrever e executar seu primeiro programa em Python:</p>
+<ol>
+<li>Abra o VS Code.</li>
+<li>Crie um novo arquivo clicando em "File &rarr; New File" ou utilizando o atalho <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-n">N</kbd></span> (Windows)/<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-n">N</kbd></span> (macOS).</li>
+<li>Salve o arquivo com o nome <code>hello.py</code>. Para isso, clique em "File &rarr; Save", preencha o nome, escolha uma pasta para salvar o arquivo e clique em "Save".</li>
+<li>Digite o código <code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span></code>
+<img alt="Código com &quot;hello world&quot;" class="center" src="/aulas/01-funcoes/hello.png" width="80%" /></li>
+<li>Salve o arquivo clicando em "File &rarr; Save" ou usando o atalho <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> (Windows)/<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-s">S</kbd></span> (macOS).</li>
+<li>Execute seu programa. Para executar um programa em Python, temos quatro possibilidades:<ol>
+<li>Clique em "Run &rarr; Run Without Debugging"</li>
+<li>Utilize o atalho <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span></li>
+<li>Clique na setinha verde no canto superior direito:
+    <img alt="Botão para executar o código" class="center" src="/aulas/01-funcoes/run.png" width="30%" /></li>
+<li>[Avançado] <a href="/tutoriais/terminal-win">Utilizando o terminal</a> para ir até a pasta onde se encontra o arquivo e executando-o com o comando <code>python hello.py</code></li>
+</ol>
+</li>
+<li>O texto <em>Hello, world!</em> deve aparecer no terminal.</li>
+</ol>
+</div>
+<h3 id="entendendo-nosso-primeiro-programa">Entendendo nosso primeiro programa<a class="headerlink" href="#entendendo-nosso-primeiro-programa" title="Permanent link">&para;</a></h3>
+<p>Nosso código possui apenas uma linha, mas já contém diversos conceitos importantes. Não se preocupe se não entender toda a explicação a seguir, tudo ficará mais claro conforme formos aprendendo mais. A linha <code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span></code> pode ser lida como: "Python, por favor, mostre na tela o texto <code class="highlight"><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span></code>. Vamos por partes.</p>
+<p><span id="print-arg"></span></p>
+<p>Comecemos pela a função <code class="highlight"><span class="nb">print</span></code>. Essa função é utilizada para mostrar texto no terminal. Podemos entender uma função como um comando do Python, ou seja, estamos dizendo para o Python <strong>fazer</strong> algo. A ação de mostrar algo na tela depende de uma informação adicional: o que deve ser mostrado. Essa informação da qual a ação depende é chamada de <strong>argumento da função</strong>. No nosso exemplo, o argumento da função <code class="highlight"><span class="nb">print</span></code> é o texto <code class="highlight"><span class="s1">&#39;Hello, world!&#39;</span></code>.</p>
+<p>Um último detalhe importante é o uso das aspas. Para indicar que <code class="highlight"><span class="n">Hello</span><span class="p">,</span> <span class="n">world</span><span class="err">!</span></code> é um texto nós utilizamos aspas, que podem ser simples ou duplas. Isso é muito importante, pois o que estiver entre aspas será considerado pelo Python como texto (que chamamos de <em>string</em>) e não como um comando (por exemplo a função <code class="highlight"><span class="nb">print</span></code>).</p>
+<div class="admonition info">
+<p class="admonition-title">Dica Pro: documente o código!</p>
+<p>Uma lição a ser aprendida é que passamos <strong>muito</strong> mais tempo lendo código pré-existente do que escrevendo código novo. Por isso a documentação do código é uma prática extremamente importante. A documentação pode ser feita por meio de comentários, trechos de texto que não afetam o comportamento do programa, que ajudam o leitor (seja algum colega de trabalho que não conhece o código ou você mesmo algum tempo no futuro) a compreender o código.</p>
+<p>Veja a seguir um exemplo do mesmo programa que acabamos de executar, mas com documentação:</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Programa que escreve &quot;Hello, world!&quot; no console.</span>
+<span class="sd">Serve para verificar se conseguimos usar o Python pela primeira vez.</span>
+
+<span class="sd">@author: Profs. Design de Software</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>O texto entre <code class="highlight"><span class="s2">&quot;&quot;&quot;</span></code> será ignorado pelo programa. Note que nesse comentário podemos encontrar informações como:</p>
+<ul>
+<li>O que o código faz;</li>
+<li>Por que ele foi escrito;</li>
+<li>Quem escreveu o código.</li>
+</ul>
+<p>Esse primeiro programa ainda é muito simples, mas conforme formos desenvolvendo programas mais complexos os comentários se tornam cada vez mais relevantes.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Buscando ajuda</p>
+<p>Depois de pensar e tentar resolver problemas por conta própria e não encontrar a solução, não tenha vergonha de procurar ajuda na internet. Até mesmo programadores experientes fazem isso. É importante, entretanto, saber como fazer essas buscas: que termos usar, quais respostas confiar, etc. Você vai desenvolver uma intuição conforme for ganhando experiência, mas para te ajudar neste começo, escrevemos um <a href="/dicas/buscando-ajuda">pequeno guia com algumas dicas</a>.</p>
+</div>
+<h2 id="operacoes-matematicas">Operações matemáticas<a class="headerlink" href="#operacoes-matematicas" title="Permanent link">&para;</a></h2>
+<p>Queremos usar o Python para fazer algo além de só mostrar um texto na tela. Para isso vamos começar aprendendo sobre como realizar operações matemáticas.</p>
+<div class="admonition example">
+<h3 id="exercicio-2">EXERCÍCIO 2<a class="headerlink" href="#exercicio-2" title="Permanent link">&para;</a></h3>
+<p>Crie um novo arquivo chamado <code>operadores.py</code> no VS Code e copie o código a seguir. Execute-o e tente identificar a partir dos resultados o que cada operador faz. Discuta com seus colegas.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usando alguns operadores numéricos:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>O programa em Python é executado linha a linha, ou seja, as linhas do programa são executadas uma após a outra de cima para baixo. <strong>Uma linha de código só é executada depois que a linha anterior terminou de executar.</strong></p>
+</div>
+<details class="success"><summary>Resposta</summary><p>Leia a resposta apenas depois de discutir com seus colegas.</p>
+<p>O código abaixo foi comentado com as respostas. Comentários em Python são iniciados com o caractere cerquilha (<code class="highlight"><span class="c1">#</span></code>). Tudo o que vier depois desse caractere será ignorado pelo programa.</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Programa para demonstrar alguns operadores numéricos.</span>
+
+<span class="sd">@author: Profs. Design de Software</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usando alguns operadores numéricos:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Soma.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Subtração.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Multiplicação.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Potenciação ou exponenciação.</span>
+
+<span class="c1"># Operadores de divisão</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Divisão.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Divisão inteira: quociente.</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Resto da divisão inteira.</span>
+
+<span class="c1"># É possível utilizar parênteses para modificar a ordem</span>
+<span class="c1"># de aplicação das operações.</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Parênteses.</span>
+</code></pre></div>
+
+<details class="info"><summary>Mais alguns detalhes...</summary><p>No programa acima podemos observar mais alguns detalhes:</p>
+<ul>
+<li>A cerquilha (<code class="highlight"><span class="c1">#</span></code>) que inicia um comentário pode ser inserida no começo de uma linha ou precedida por 2 espaços depois de um trecho de código. Esses dois espaços antes da cerquilha não são obrigatórios, mas são um padrão adotado pela comunidade Python.</li>
+<li>Os operadores e números estão separados por espaços. Esses espaços também não são obrigatórios, mas facilitam na interpretação visual.</li>
+</ul>
+</details>
+</details>
+</div>
+<p>A ordem de prioridade dos operadores em Python segue a convenção matemática do PEMDAS:</p>
+<ul>
+<li><b>P</b>arênteses têm a maior prioridade e pode ser usado para forçar uma expressão a ser avaliada na ordem que você quiser.</li>
+<li><b>E</b>xponenciação tem a próxima precedência mais alta.</li>
+<li><b>M</b>ultiplicação e</li>
+<li><b>D</b>ivisão têm a mesma precedência, que é maior do que a</li>
+<li><b>A</b>dição e</li>
+<li><b>S</b>ubtração.</li>
+</ul>
+<p>Além disso, as operações de mesma prioridade são avaliadas da esquerda para a direita.</p>
+<div class="admonition example">
+<h3 id="exercicio-3">EXERCÍCIO 3<a class="headerlink" href="#exercicio-3" title="Permanent link">&para;</a></h3>
+<p>Escreva um programa em Python que imprime (mostra na tela com o comando <code class="highlight"><span class="nb">print</span></code>) o resultado das seguintes expressões numéricas:</p>
+<ol>
+<li><span><span class="MathJax_Preview">1 + \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} + \frac{1}{2^4}</span><script type="math/tex">1 + \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} + \frac{1}{2^4}</script></span> (resposta esperada: <code class="highlight"><span class="mf">1.9375</span></code>)</li>
+<li><span><span class="MathJax_Preview">\frac{3\cdot4+5}{1+2\cdot3}</span><script type="math/tex">\frac{3\cdot4+5}{1+2\cdot3}</script></span> (resposta esperada: <code class="highlight"><span class="mf">2.4285714285714284</span></code> &rarr; não se preocupe se der alguma diferença nas últimas casas decimais)</li>
+<li><span><span class="MathJax_Preview">\sqrt{3^2+4^2}</span><script type="math/tex">\sqrt{3^2+4^2}</script></span> (resposta esperada: <code class="highlight"><span class="mf">5.0</span></code>)</li>
+</ol>
+</div>
+<h2 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h2>
+<p>Podemos armazenar valores ou resultados de expressões matemáticas em variáveis. Uma variável é como se fosse uma caixa com uma etiqueta com o seu nome. O conteúdo armazenado na caixa pode ser acessado a partir do nome em sua etiqueta. Considere o exemplo a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Devemos ler a primeira linha como: "a variável x <strong>recebe</strong> o valor 5". É como se disséssemos: "interpretador Python, por favor, crie na memória do computador uma caixa chamada <code class="highlight"><span class="n">x</span></code> e guarde lá dentro o valor <code class="highlight"><span class="mi">5</span></code>."</p>
+<p>A linha seguinte pede para o Python imprimir o <strong>conteúdo</strong> da variável <code class="highlight"><span class="n">x</span></code>, nesse caso, <code class="highlight"><span class="mi">5</span></code>. Assim, o Python vai escrever <code class="highlight"><span class="mi">5</span></code> no terminal.</p>
+<p>Podemos usar variáveis dentro de outras expressões. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O retângulo de lados </span><span class="si">{0}</span><span class="s1"> e </span><span class="si">{1}</span><span class="s1"> tem área </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Usamos o <code class="highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code> para escrever valores no meio do texto. É importante notar que:</p>
+<ol>
+<li>A sequência dos argumentos (conteúdo dentro dos parênteses do <code class="highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code>) é importante.</li>
+<li>O primeiro argumento (<code class="highlight"><span class="n">x</span></code>) será inserido no lugar do <code class="highlight"><span class="p">{</span><span class="mi">0</span><span class="p">}</span></code>, o segundo argumento (<code class="highlight"><span class="n">y</span></code>) será inserido no lugar do <code class="highlight"><span class="p">{</span><span class="mi">1</span><span class="p">}</span></code> e o terceiro argumento (<code class="highlight"><span class="n">z</span></code>) será inserido no lugar do <code class="highlight"><span class="p">{</span><span class="mi">2</span><span class="p">}</span></code>.</li>
+<li>Em Python (e em programação em geral) começamos a contar a partir do zero, ou seja, 0 é o primeiro, 1 é o segundo, 2 é o terceiro e assim por diante.</li>
+<li>O <code class="highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code> é executado primeiro, escrevendo os valores no meio do texto, e depois o resultado é utilizado pela função <code>print()</code>, mostrando o resultado na tela.</li>
+</ol>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-4">EXERCÍCIO 4<a class="headerlink" href="#exercicio-4" title="Permanent link">&para;</a></h3>
+<p>Acesse o servidor de desafios (<a href="http://softdes.insper.edu.br/">http://softdes.insper.edu.br/</a>). A sua senha é igual ao seu login e ambos são iguais ao seu login do Insper. Por exemplo, se o seu login do Insper é <code>fulano123</code>, o seu login no servidor será <code>fulano123</code> e a sua senha também será <code>fulano123</code>. Se você não conseguir acessar, é possível que o seu login ainda não tenha sido criado. Nesse caso, peça para o professor verificar se o seu usuário já foi criado.</p>
+<p>Resolva o <a href="http://softdes.insper.edu.br/exercicio/104">[TESTE DE MESA] Variáveis</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Teste de Mesa</p>
+<p>O teste de mesa consiste em simular manualmente a execução de um programa. O processo se dá da seguinte forma:</p>
+<ol>
+<li>Execute as operações da linha atual (no servidor de desafios a linha atual é destacada em vermelho). No início da execução a linha atual é a primeira linha de código.</li>
+<li>Atualize o valor das variáveis na memória. No servidor existe uma região à direita chamada "Memória". Você deve atualizar as variáveis nessa região com os valores obtidos após a execução da linha atual. Se a linha atual não modificou alguma variável ela deve permanecer inalterada na memória.</li>
+<li>Se a função <code class="highlight"><span class="nb">print</span></code> foi utilizada na linha atual, escreva na região chamada "Saída do terminal" (fundo preto) o que aparecerá no terminal.</li>
+<li>Prepare-se para a execução da próxima linha. No servidor é necessário selecionar o número da próxima linha a ser executada em "Próxima linha".</li>
+<li>Clique em "Próximo passo".</li>
+</ol>
+<p>É possível realizar um teste de mesa apenas com papel e caneta. Você pode sempre utilizar esse processo para verificar se o seu programa faz o que era esperado.</p>
+</div>
+</div>
+<p>Podemos usar variáveis para armazenar qualquer tipo de dados em Python:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Demonstração de uso de variáveis com diversos tipos de dados em Python.</span>
+
+<span class="sd">@author: Profs. de Design de Software.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Variáveis podem armazenar texto (strings).</span>
+<span class="n">disciplina</span> <span class="o">=</span> <span class="s1">&#39;Design de Software&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">disciplina</span><span class="p">)</span>
+
+<span class="c1"># Variáveis podem armazenar inteiros.</span>
+<span class="n">num_alunos</span> <span class="o">=</span> <span class="mi">120</span>
+
+<span class="c1"># Variáveis podem armazenar os valores especiais True e False</span>
+<span class="c1"># São usados em expressões lógicas, ou também chamadas</span>
+<span class="c1"># expressões booleanas.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span>  <span class="c1"># Operação booleana &#39;OU&#39;.</span>
+
+<span class="c1"># Variáveis podem armazenar números reais. Em computação,</span>
+<span class="c1"># estes números são chamados de números em ponto flutuante.</span>
+<span class="n">base</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">altura</span> <span class="o">=</span> <span class="mf">4.2e1</span>  <span class="c1"># 4.2 x 10**1 =&gt; 42.0</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+<span class="c1"># Variáveis armazenam muitos outros tipos que veremos depois.</span>
+<span class="n">ponto</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">)</span>  <span class="c1"># Tupla.</span>
+<span class="n">teste</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.2</span><span class="p">,</span> <span class="s1">&#39;laranja&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>  <span class="c1"># Lista.</span>
+<span class="n">notas</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;dessoft&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s1">&#39;gde&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+         <span class="s1">&#39;modsim&#39;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>  <span class="c1"># dicionário.</span>
+</code></pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Considere as linhas 8 e 9. Aqui vemos a importância das aspas. Ao executar a linha 9 o Python mostrará na tela a string armazenada na variável <code class="highlight"><span class="n">disciplina</span></code>, ou seja, <code class="highlight"><span class="n">Design</span> <span class="n">de</span> <span class="n">Software</span></code>. Se utilizássemos aspas na linha 9 (<code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;disciplina&#39;</span><span class="p">)</span></code>) o Python mostraria o <strong>texto</strong> <code class="highlight"><span class="n">disciplina</span></code> no terminal.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-5">EXERCÍCIO 5<a class="headerlink" href="#exercicio-5" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/105">[TESTE DE MESA] Mais variáveis</a>.</p>
+</div>
+<h2 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">&para;</a></h2>
+<p>Já vimos como criar valores numéricos e de texto puro em Python (chamados em Python de "literais") e variáveis. Tudo isso parece muito com a boa e velha matemática. E já que estamos vendo todas essas relações, um outro conceito importante em matemática são funções. Por exemplo:</p>
+<p><span id="f-mat"></span></p>
+<div>
+<div class="MathJax_Preview">f(x) = 1.60934\cdot x</div>
+<script type="math/tex; mode=display">f(x) = 1.60934\cdot x</script>
+</div>
+<p>Essa função converte valores em milhas (<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>) para quilômetros. Por exemplo: <span><span class="MathJax_Preview">f(10) = 1.60934\cdot 10 = 16.0934</span><script type="math/tex">f(10) = 1.60934\cdot 10 = 16.0934</script></span>, ou seja, 10 milhas é o mesmo que 16.0934 km.</p>
+<p>O Python também nos permite criar funções! Escrevendo a mesma função acima em Python:</p>
+<p><span id="f-python"></span></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.60934</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>Novamente temos muitas observações importantes. Vamos começar pelos nomes:</p>
+<ul>
+<li>O <code class="highlight"><span class="n">x</span></code> na linha 1 é chamado de <strong>argumento</strong> da função.</li>
+<li>O <code class="highlight"><span class="n">y</span></code> na linha 3 é chamado de <strong>retorno</strong> ou <strong>resultado</strong> da função.</li>
+<li>As linhas 2 e 3 são chamadas de <strong>corpo</strong> ou <strong>bloco</strong> da função.</li>
+<li>O corpo da função é identificado com os 4 espaços no começo da linha. Esses 4 espaços são chamados de <strong>indentação</strong>.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Indentação</p>
+<p>A indentação é crucial e Python e tem um significado especial. Ela é utilizada para indicar blocos de código. Portanto não se deve utilizar indentações a mais ou a menos, pois isso causará um erro na execução do programa.</p>
+<p>O uso de 4 espaços é outra padronização da comunidade Python. Se você usar 2, 3 ou qualquer outra quantidade de espaços (ou até mesmo o caractere <span class="keys"><kbd class="key-tab">Tab</kbd></span>) o código funcionará da mesma forma. Desde que seja consistente, ou seja, escolha um formato e utilize-o em todo o seu programa. Recomendamos que você utilize 4 espaços para seguir o padrão da comunidade.</p>
+</div>
+<p>Se você executar o código acima não vai acontecer nada. Nesse código nós estamos apenas <strong>definindo</strong> a função <code class="highlight"><span class="n">f</span></code> (por isso a palavra <code class="highlight"><span class="k">def</span></code>). Podemos entender a linha 1 como: "Python, <strong>quando</strong> eu pedir para você executar a função <code class="highlight"><span class="n">f</span></code>, passando um valor para <code class="highlight"><span class="n">x</span></code>, o que você deve fazer é: multiplicar o valor armazenado na variável <code class="highlight"><span class="n">x</span></code> por 1.60934 e guardar o resultado na variável <code class="highlight"><span class="n">y</span></code> e depois devolver o valor armazenado na variável <code class="highlight"><span class="n">y</span></code> como o resultado". Em outras palavras, é como se estivéssemos <strong>criando um novo comando do Python</strong> (assim como já temos o <code class="highlight"><span class="nb">print</span></code>, por exemplo).</p>
+<h2 id="chamando-funcoes-em-python">Chamando funções em Python<a class="headerlink" href="#chamando-funcoes-em-python" title="Permanent link">&para;</a></h2>
+<p>Considere novamente a função matemática <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> <a href="#f-mat">vista acima</a>. Note que não existe um valor, ou resultado, para <span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> a não ser que você defina quanto vale o <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>. Da mesma forma, não existe um resultado, ou valor de retorno, para a função <a href="#f-python"><code class="highlight"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> no Python</a> a não ser que definamos um valor para <code class="highlight"><span class="n">x</span></code>.</p>
+<p>Essa ideia é a mesma que <a href="#print-arg">apresentamos sobre a função <code class="highlight"><span class="nb">print</span></code></a>, ou seja, precisamos de uma informação adicional. Uma vez que definimos uma função é como se ela se tornasse parte da linguagem Python. Assim, para esse contexto introdutório, não existe nenhuma diferença entre a função <code class="highlight"><span class="nb">print</span></code> e a função <code class="highlight"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> em termos de importância. Ambas são comandos disponíveis no Python para o programador utilizar em seu código.</p>
+<p>Vamos então ver um exemplo de uso da nossa função <code class="highlight"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code>. Considere o código a seguir:</p>
+<p><span id="f-programa"></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.60934</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>Nas linhas 1 a 3 a função <code class="highlight"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> é definida, ou seja, após a execução dessas linhas o Python sabe o que fazer sempre que precisarmos dessa função. Na linha 5, armazenamos o número 10 na variável <code class="highlight"><span class="n">a</span></code>. Na linha 6 ocorre a chamada da função. Vamos detalhar o que ocorre nessa linha:</p>
+<ul>
+<li>O valor da variável <code class="highlight"><span class="n">a</span></code> é utilizado, o Python consulta esse valor na memória e substitui na chamada da função. Agora a linha é equivalente a <code class="highlight"><span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></code>.</li>
+<li>A função <code class="highlight"><span class="n">f</span><span class="p">()</span></code> é executada com o argumento <code class="highlight"><span class="mi">10</span></code>.</li>
+<li>A próxima linha executada é a linha 1.</li>
+<li>O Python cria uma nova região temporária na memória. Essa memória só existirá enquanto a função estiver sendo executada.</li>
+<li>Na linha 1 é criada uma variável chamada <code class="highlight"><span class="n">x</span></code> nessa memória temporária, armazenando o valor recebido como argumento, no caso <code class="highlight"><span class="mi">10</span></code>.</li>
+<li>Na linha 2 o valor <code class="highlight"><span class="n">x</span></code> é substituído por <code class="highlight"><span class="mi">10</span></code> e o valor <code class="highlight"><span class="mf">16.0934</span></code> (resultado da multiplicação) é armazenado na variável <code class="highlight"><span class="n">y</span></code>, também na memória temporária.</li>
+<li>Na linha 3 o valor guardado na variável <code class="highlight"><span class="n">y</span></code> é devolvido como resultado.</li>
+<li>A memória temporária criada para a função <code class="highlight"><span class="n">f</span><span class="p">()</span></code> é desativada. A partir deste momento as variáveis que estavam contidas nela (<code class="highlight"><span class="n">x</span></code> e <code class="highlight"><span class="n">y</span></code>) não existem mais.</li>
+<li>Voltamos para a linha 6.</li>
+<li>Agora que temos o resultado da função a linha é equivalente a <code class="highlight"><span class="n">b</span> <span class="o">=</span> <span class="mf">16.0934</span></code>.</li>
+<li>O valor <code class="highlight"><span class="mf">16.0934</span></code> é armazenado na variável <code class="highlight"><span class="n">b</span></code></li>
+</ul>
+<p>Por fim, na linha 7, o valor armazenado na variável <code class="highlight"><span class="n">b</span></code> é utilizado como argumento da função <code class="highlight"><span class="nb">print</span><span class="p">()</span></code> e o valor <code class="highlight"><span class="mf">16.0934</span></code> é mostrado no terminal.</p>
+<div class="admonition example">
+<h3 id="exercicio-6">EXERCÍCIO 6<a class="headerlink" href="#exercicio-6" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/106">[TESTE DE MESA] Converte milhas para km</a> para consolidar a sua compreensão sobre funções em Python.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Dica Pro: use bons nomes!</p>
+<p>No dia seguinte você abre <a href="#f-programa">esse programa</a>. O que faz mesmo esse código? Acredite, é mais comum do que você imagina. Enquanto estamos desenvolvendo o programa temos muito claro para quê cada variável serve, mas não precisamos de muito tempo para olhar o mesmo código e não ter ideia do que está acontecendo.</p>
+<p>Por isso, use nomes que façam sentido para as suas variáveis e funções. Quando não estiver claro o suficiente, adicione comentários, mas as vezes boas escolhas de nomes dispensam comentários no código. Considere a versão a seguir (ela faz exatamente o mesmo que o nosso código anterior):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Programa que converte de milhas para quilômetros. Versão melhor documentada.</span>
+
+<span class="sd">@author: Profs. de Design de Software</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Função que converte um valor de distância</span>
+<span class="c1"># dado em milhas para quilômetros.</span>
+<span class="k">def</span> <span class="nf">converte_milhas_para_km</span><span class="p">(</span><span class="n">distancia_mi</span><span class="p">):</span>
+    <span class="n">distancia_km</span> <span class="o">=</span> <span class="mf">1.60934</span> <span class="o">*</span> <span class="n">distancia_mi</span>
+    <span class="k">return</span> <span class="n">distancia_km</span>
+
+<span class="c1"># Quanto é 10 mi em km?</span>
+<span class="n">milhas</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">km</span> <span class="o">=</span> <span class="n">converte_milhas_para_km</span><span class="p">(</span><span class="n">milhas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">km</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+
+<p>Neste exemplo os comentários poderiam até ser removidos, pois o nome da função já deixa claro o que ela faz.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-7">EXERCÍCIO 7<a class="headerlink" href="#exercicio-7" title="Permanent link">&para;</a></h3>
+<p>No servidor, faça o <a href="http://softdes.insper.edu.br/exercicio/6">exercício 6. Celsius para Fahrenheit</a>.</p>
+<p>Primeiro resolva em seu próprio computador, fazendo testes com alguns valores específicos (ex: 0 e 100). Depois disso, envie apenas a definição da função, sem o código que chama a função. Por exemplo, no <a href="#f-programa">programa que desenvolvemos acima</a>, você enviaria apenas as linhas 1 a 3.</p>
+<p>Sempre que o exercício do servidor pedir uma função você deve enviar apenas a definição da função, sem o código de teste que chama a função.</p>
+</div>
+<div class="admonition example">
+<h3 id="exercicio-8">EXERCÍCIO 8<a class="headerlink" href="#exercicio-8" title="Permanent link">&para;</a></h3>
+<p>Faça o <a href="http://softdes.insper.edu.br/exercicio/7">exercício 7. Área do triângulo</a> no servidor.</p>
+<p>Dica: uma função em Python, assim como uma função matemática multivariada, pode receber vários argumentos separados por vírgula.</p>
+<p>Não esqueça de escrever código de teste também. Pense em valores de teste que sejam interessantes. Por exemplo: e se a base for zero? E se a altura for zero? E se forem iguais?</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../turma-c/" title="Turma C" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Turma C
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../02-io/" title="02 - Input e String" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                02 - Input e String
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.592d4e23.min.js"></script>
+      <script src="../../assets/javascripts/bundle.806ca5c4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.01088dc6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>
