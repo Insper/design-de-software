@@ -713,27 +713,27 @@
                 
                 
                 <h1 id="navegando-pelo-terminal-windows">Navegando Pelo Terminal (Windows)<a class="headerlink" href="#navegando-pelo-terminal-windows" title="Permanent link">&para;</a></h1>
-<p><img alt="Fonte: http://twentyeighttwelve.com/tron-legacy-command-line/" class="center" src="/tutoriais/terminal/tron-legacy-grep.jpg" /></p>
+<p><img alt="Fonte: http://twentyeighttwelve.com/tron-legacy-command-line/" class="center" src="tron-legacy-grep.jpg" /></p>
 <p>Você já deve ter visto em algum filme uma cena como a mostrada acima: <a href="http://hackertyper.com/">um "hacker" digita comandos freneticamente em uma interface onde só aparecem comandos de texto ininteligíveis até que magicamente ele obtém os dados que todos julgavam ser impossível obter</a>. Interfaces de linha de comando podem assustar um pouco no começo, mas veremos que sabendo apenas 2 comandos já é possível utilizá-las para navegar pelos arquivos do computador.</p>
 <p>Talvez você nunca tenha aberto o terminal/console/prompt do seu computador, mas ele está (<a href="https://en.wikipedia.org/wiki/Command-line_interface">e sempre esteve</a>) lá! Vamos começar abrindo o terminal no nosso computador.</p>
 <h2 id="abrindo-o-terminal">Abrindo o Terminal<a class="headerlink" href="#abrindo-o-terminal" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Atenção</p>
-<p>A partir deste ponto existem algumas diferenças entre os sistemas operacionais. <strong>Este handout foi desenvolvido para usuários Windows</strong>. Se você usa Mac OS X, consulte o <a href="/tutoriais/terminal-osx">outro handout disponibilizado</a>.</p>
+<p>A partir deste ponto existem algumas diferenças entre os sistemas operacionais. <strong>Este handout foi desenvolvido para usuários Windows</strong>. Se você usa Mac OS X, consulte o <a href="../terminal-osx">outro handout disponibilizado</a>.</p>
 </div>
 <p>No Windows, vamos utilizar uma versão alternativa do terminal chamada Anaconda Prompt. Ela foi instalada quando você instalou o Anaconda no seu computador. Para abrir o Anaconda Prompt clique em "Digite aqui para pesquisar" no canto inferior esquerdo (ou aperte a tecla <span class="keys"><kbd class="key-windows">Win</kbd></span>), digite "anaconda prompt" e aperte a tecla <span class="keys"><kbd class="key-enter">Enter</kbd></span>;</p>
-<p><img alt="Uma janela parecida com essa deve aparecer ao abrir o terminal" class="center" src="/tutoriais/terminal/win-term0.png" width="50%" /></p>
+<p><img alt="Uma janela parecida com essa deve aparecer ao abrir o terminal" class="center" src="win-term0.png" width="50%" /></p>
 <p>Não vamos entrar em detalhes, mas a principal informação que aparece antes do <code>&gt;</code> é a sua pasta atual. Os comandos são digitados depois do <code>&gt;</code>.</p>
 <h2 id="o-comando-dir">O comando <code>dir</code><a class="headerlink" href="#o-comando-dir" title="Permanent link">&para;</a></h2>
 <p>Vamos começar pelo comando <code>dir</code>. Digite <code>dir</code> e aperte a tecla <span class="keys"><kbd class="key-enter">Enter</kbd></span>:</p>
-<p><img alt="Resultado do comando dir" class="center" src="/tutoriais/terminal/win-term1.png" width="50%" /></p>
+<p><img alt="Resultado do comando dir" class="center" src="win-term1.png" width="50%" /></p>
 <p>O comando <code>dir</code> lista os arquivos e pastas presentes na pasta atual. Funciona mais ou menos assim: imagine que você é um personagem de um jogo em uma sala (a pasta atual) com diversas informações (arquivos) e algumas portas (outras pastas). Todos os comandos que você executar serão executados na pasta atual. Por enquanto, vamos considerar duas possibilidades de ação:</p>
 <ol>
 <li>Visualizar os arquivos disponíveis da pasta atual;</li>
 <li>Navegar para outra pasta.</li>
 </ol>
 <p>O comando <code>dir</code> realiza a primeira opção. Se você não mudou nenhuma configuração do terminal você sempre começa na pasta do seu usuário (também conhecida como sua <em>home</em>). Para verificar que o comando listou os arquivos e pastas disponíveis, vamos abrir o Explorador de Arquivos na mesma pasta:</p>
-<p><img alt="Conteúdo da *home*" class="center" src="/tutoriais/terminal/win-explorer1.png" width="50%" /></p>
+<p><img alt="Conteúdo da *home*" class="center" src="win-explorer1.png" width="50%" /></p>
 <h2 id="o-comando-cd">O comando <code>cd</code><a class="headerlink" href="#o-comando-cd" title="Permanent link">&para;</a></h2>
 <p>Agora vamos tentar a segunda opção: navegar para outra pasta. Para isso usamos o comando <code>cd</code>. Ele deve ser seguido do nome da pasta. Vamos entrar na pasta <code>insper</code> listada acima. Para isso vamos usar o comando <code>cd insper</code>.</p>
 <div class="alert">
@@ -744,25 +744,25 @@ Os arquivos no seu computador provavelmente serão diferentes dos arquivos deste
 Os comandos executados anteriormente não são apagados.
 </div>
 
-<p><img alt="Executando o comando cd" class="center" src="/tutoriais/terminal/win-term2.png" width="50%" /></p>
+<p><img alt="Executando o comando cd" class="center" src="win-term2.png" width="50%" /></p>
 <p>O comando <code>cd</code> não imprime nada no terminal. Esse é o resultado esperado. Vamos visualizar o conteúdo da pasta <code>insper</code>. Para isso, mais uma vez usamos o comando <code>dir</code>:</p>
-<p><img alt="Resultado do comando dir na pasta insper" class="center" src="/tutoriais/terminal/win-term3.png" width="50%" /></p>
+<p><img alt="Resultado do comando dir na pasta insper" class="center" src="win-term3.png" width="50%" /></p>
 <p>Vemos que essa pasta contém o arquivo <code>calendario.txt</code> e diversas pastas com nomes de disciplinas. Vamos entrar na pasta <code>design-de-software</code>. Mas antes disso, você notou que, na pasta atual, <code>design-de-software</code> é a única pasta que começa com as letras <code>des</code>? Além disso, o terminal acabou de listar as pastas, então em teoria ele "sabe" quais são as pastas e arquivos disponíveis. Não seria bom se eu pudesse escrever só o começo do nome da pasta e o terminal já completasse com o resto? E sim, ele faz isso! Podemos, por exemplo, digitar somente <code>cd des</code>:</p>
-<p><img alt="Digitando apenas cd e o começo do nome da pasta" class="center" src="/tutoriais/terminal/win-term4.png" width="50%" /></p>
+<p><img alt="Digitando apenas cd e o começo do nome da pasta" class="center" src="win-term4.png" width="50%" /></p>
 <p>Depois disso, ao apertar a tecla <span class="keys"><kbd class="key-tab">Tab</kbd></span>, o terminal vai completar o comando com o resto do nome:</p>
-<p><img alt="O terminal completa o nome da pasta quando não há ambiguidade" class="center" src="/tutoriais/terminal/win-term5.png" width="50%" /></p>
+<p><img alt="O terminal completa o nome da pasta quando não há ambiguidade" class="center" src="win-term5.png" width="50%" /></p>
 <p>No nosso exemplo, dentro da pasta <code>design-de-software</code> existe uma pasta <code>aulas</code>, que contém outras duas pastas <code>aula01</code> e <code>aula02</code>, que por sua vez contém 4 arquivos.</p>
-<p><img alt="Conteúdo da pasta design-de-software" class="center" src="/tutoriais/terminal/win-explorer2.png" width="50%" /></p>
+<p><img alt="Conteúdo da pasta design-de-software" class="center" src="win-explorer2.png" width="50%" /></p>
 <p>Pode ser um pouco cansativo usar um comando separado para entrar em cada pasta, ainda mais se você já souber o caminho completo. Por isso, também podemos avançar mais de um nível no comando <code>cd</code>, separando os nomes das pastas com uma barra invertida ('\'):</p>
-<p><img alt="Podemos usar o comando cd com um caminho mais longo" class="center" src="/tutoriais/terminal/win-term6.png" width="50%" /></p>
+<p><img alt="Podemos usar o comando cd com um caminho mais longo" class="center" src="win-term6.png" width="50%" /></p>
 <p>Para verificar que estamos no lugar certo vamos usar, mais uma vez, o comando <code>dir</code>:</p>
-<p><img alt="Resultado do comando dir na pasta insper\design-de-software\aulas\aula02" class="center" src="/tutoriais/terminal/win-term7.png" width="50%" /></p>
+<p><img alt="Resultado do comando dir na pasta insper\design-de-software\aulas\aula02" class="center" src="win-term7.png" width="50%" /></p>
 <p>Finalmente, podemos também voltar para pastas acima da pasta atual. Para isso usamos o <code>..</code>, que se refere à pasta mãe. Por exemplo:</p>
-<p><img alt="Usando o cd .. para subir um nível" class="center" src="/tutoriais/terminal/win-term8.png" width="50%" /></p>
+<p><img alt="Usando o cd .. para subir um nível" class="center" src="win-term8.png" width="50%" /></p>
 <p>Vemos que agora estamos na pasta <code>aulas</code>:</p>
-<p><img alt="Usando ls para ver o conteúdo" class="center" src="/tutoriais/terminal/win-term9.png" width="50%" /></p>
+<p><img alt="Usando ls para ver o conteúdo" class="center" src="win-term9.png" width="50%" /></p>
 <p>Podemos também compor o <code>..</code> no caminho de uma pasta. Por exemplo: <code>..\..</code> são dois níveis acima da pasta atual.</p>
-<p><img alt="Combinando o .. em um caminho mais complexo" class="center" src="/tutoriais/terminal/win-term10.png" width="50%" /></p>
+<p><img alt="Combinando o .. em um caminho mais complexo" class="center" src="win-term10.png" width="50%" /></p>
 <p>Assim, depois de executar <code>cd ..\..</code> vemos que estamos novamente na pasta <code>insper</code>.</p>
                 
               
