@@ -126,7 +126,7 @@ Além disso, também temos a opção de multiplicar uma lista por um número int
 --8<-- "05-listas/multiplicando.py"
 ```
 
-**Observação:** esse comportamento é **muito** semelhante às somas e [multiplicações de strings](/aulas/02-io/#operacoes-com-strings).
+**Observação:** esse comportamento é **muito** semelhante às somas e [multiplicações de strings](../02-io/#operacoes-com-strings).
 
 !!! example ""
     ### EXERCÍCIO 10

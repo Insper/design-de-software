@@ -13,7 +13,7 @@ A [documentação da linguagem Python](https://www.python.org/doc/) possui diver
 
 A documentação também pode ser acessada pelo terminal. Para isso, digite o comando `python` no terminal para entrar no modo interativo do Python e então digite o comando `help()` para entrar no modo de documentação. Nesse modo você pode digitar o nome de um comando ou módulo para ler a sua documentação.
 
-![help no modo interativo do Python](/dicas/buscando-ajuda/help.png){.center}
+![help no modo interativo do Python](help.png){.center}
 
 
 ## StackOverflow
@@ -27,7 +27,7 @@ Algumas dicas para verificar respostas do StackOverflow:
 
 1. **Teste o código:** se você está procurando por uma resposta que é um trecho de código, você pode testá-lo em seu próprio programa para ver se ele funciona. Se ele não funcionar já é um bom indício de que não é o que você estava procurando. Mas mesmo se ele funcionar, isso não quer dizer que foi uma boa resposta. Verifique os pontos a seguir.
 1. **Verifique qual foi a resposta aceita:** ao lado das respostas é possível visualizar qual foi a resposta aceita e quantos votos ela recebeu. No exemplo abaixo vemos que a resposta foi aceita como correta e recebeu 4310 votos positivos (ambos indicados do lado esquerdo).
-    ![Resposta do stackoverflow](/dicas/buscando-ajuda/stackoverflow-resposta.png){.center}
+    ![Resposta do stackoverflow](stackoverflow-resposta.png){.center}
 1. **Verifique a reputação do autor da resposta:** os pontos de reputação não são um fator definitivo. É possível que pessoas com poucos pontos de reputação dêem a resposta exata para o seu problema ou pessoas com muitos pontos de reputação dêem uma resposta errada ou desatualizada. De qualquer forma, se a pessoa que respondeu a pergunta possui muitos pontos de reputação é um bom sinal de que a resposta pode ser confiável. No exemplo acima o autor possui 56,9 mil pontos de reputação e a pessoa que editou a resposta, 23,1 mil (ambos são relativamente altos).
 
 ## Outros recursos online

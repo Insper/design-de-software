@@ -4,7 +4,7 @@
 
 O nome Python teve a sua origem no grupo humorístico britânico [Monty Python](https://pt.wikipedia.org/wiki/Monty_Python) (se tiver curiosidade, é possível encontrar alguns títulos no Netflix).
 
-![Fonte: https://www.esquire.com/entertainment/movies/a25270/monty-python-meaning-of-life-review/](/aulas/01-funcoes/monty-python.jpg){.center}
+![Fonte: https://www.esquire.com/entertainment/movies/a25270/monty-python-meaning-of-life-review/](monty-python.jpg){.center}
 
 A linguagem Python foi desenvolvida por [Guido van Rossum](https://en.wikipedia.org/wiki/Guido_van_Rossum) no início da década de 1990. Apesar de ser uma linguagem relativamente antiga, o seu uso apresentou [um crescimento significativo nos últimos anos](https://stackoverflow.blog/2017/09/06/incredible-growth-python/) e é hoje uma das linguagens de programação mais populares no mundo, sendo [amplamente utilizada por grandes empresas](https://www.python.org/about/quotes/) como Google, Netflix, Nasa, Dropbox, e muitos outros.
 
@@ -40,14 +40,14 @@ Então mãos à obra!
     1. Crie um novo arquivo clicando em "File --> New File" ou utilizando o atalho ++ctrl+n++ (Windows)/++cmd+n++ (macOS).
     1. Salve o arquivo com o nome `hello.py`. Para isso, clique em "File --> Save", preencha o nome, escolha uma pasta para salvar o arquivo e clique em "Save".
     1. Digite o código `#!python print('Hello, world!')`
-    ![Código com "hello world"](/aulas/01-funcoes/hello.png){width=80% .center}
+    ![Código com "hello world"](hello.png){width=80% .center}
     1. Salve o arquivo clicando em "File --> Save" ou usando o atalho ++ctrl+s++ (Windows)/++cmd+s++ (macOS).
     1. Execute seu programa. Para executar um programa em Python, temos quatro possibilidades:
         1. Clique em "Run --> Run Without Debugging"
         1. Utilize o atalho ++ctrl+f5++
         1. Clique na setinha verde no canto superior direito:
-            ![Botão para executar o código](/aulas/01-funcoes/run.png){width=30% .center}
-        1. [Avançado] [Utilizando o terminal](/tutoriais/terminal-win) para ir até a pasta onde se encontra o arquivo e executando-o com o comando `python hello.py`
+            ![Botão para executar o código](run.png){width=30% .center}
+        1. [Avançado] [Utilizando o terminal](../../tutoriais/terminal-win) para ir até a pasta onde se encontra o arquivo e executando-o com o comando `python hello.py`
     1. O texto *Hello, world!* deve aparecer no terminal.
 
 ### Entendendo nosso primeiro programa
@@ -79,7 +79,7 @@ Um último detalhe importante é o uso das aspas. Para indicar que `#!python Hel
 
 
 !!! info "Buscando ajuda"
-    Depois de pensar e tentar resolver problemas por conta própria e não encontrar a solução, não tenha vergonha de procurar ajuda na internet. Até mesmo programadores experientes fazem isso. É importante, entretanto, saber como fazer essas buscas: que termos usar, quais respostas confiar, etc. Você vai desenvolver uma intuição conforme for ganhando experiência, mas para te ajudar neste começo, escrevemos um [pequeno guia com algumas dicas](/dicas/buscando-ajuda).
+    Depois de pensar e tentar resolver problemas por conta própria e não encontrar a solução, não tenha vergonha de procurar ajuda na internet. Até mesmo programadores experientes fazem isso. É importante, entretanto, saber como fazer essas buscas: que termos usar, quais respostas confiar, etc. Você vai desenvolver uma intuição conforme for ganhando experiência, mas para te ajudar neste começo, escrevemos um [pequeno guia com algumas dicas](../../dicas/buscando-ajuda).
 
 ## Operações matemáticas
 
