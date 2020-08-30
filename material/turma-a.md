@@ -11,4 +11,4 @@
 
 **Atendimento:**
 
-* *A definir*
+* TER  8:00 -  9:30
