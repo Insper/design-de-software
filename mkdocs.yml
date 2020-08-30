@@ -42,6 +42,26 @@ nav:
         - '08 - Strings e Fatiamento': aulas/08-strings.md
         - '09 - Arquivos': aulas/09-arquivos.md
         - '10 - PyGame': aulas/10-pygame.md
+    - Vídeos:
+        - '01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções': https://www.youtube.com/watch?v=VtNiBiJ60yo
+        - '04 - Laços de Repetição (while)': https://www.youtube.com/watch?v=rHOkYSMjj18
+        - '05 - Listas': https://www.youtube.com/watch?v=ZA_cfIZW1pA
+        - '06 - For': https://www.youtube.com/watch?v=UC5TY403DrE
+        - '07 - Dicionários': https://www.youtube.com/watch?v=lSDhCUIPg38
+        - '08 - Strings e Fatiamento': https://www.youtube.com/watch?v=jkH1ICesA9A
+        - '09 - Arquivos': https://www.youtube.com/watch?v=evKHVN8gcz8
+        - '10 - Orientação a Objetos': https://www.youtube.com/watch?v=27xvt8_WTug
+        - 'Exemplo PyGame 1': https://www.youtube.com/watch?v=bH-Js1Eao50
+        - 'Exemplo PyGame 2': https://www.youtube.com/watch?v=5R5WN1oRmvg
+        - 'Exemplo PyGame 3': https://www.youtube.com/watch?v=bzal5efE6XQ
+        - 'Exemplo PyGame 4': https://www.youtube.com/watch?v=h-H6NdRzCTY
+        - 'Exemplo PyGame 5': https://www.youtube.com/watch?v=HTNmmUA3bOU
+        - 'Exemplo PyGame 6': https://www.youtube.com/watch?v=H7jZK08NFlY
+        - 'Exemplo PyGame 7': https://www.youtube.com/watch?v=TSZ6d1eN6Do
+        - 'Exemplo PyGame 8': https://www.youtube.com/watch?v=rxgEYY-IwZc
+        - 'Exemplo PyGame 9': https://www.youtube.com/watch?v=jZmCRmAQlzE
+        - 'Exemplo PyGame 10': https://www.youtube.com/watch?v=sdurCruVfsQ
+        - 'git e Github': https://www.youtube.com/watch?v=xZI0BytK5GA
     - Tutoriais:
         - 'Navegando pelo terminal':
             - 'Windows': tutoriais/terminal-win.md
