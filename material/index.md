@@ -7,6 +7,22 @@ Bem vindo ao curso de Design de Software 2020/2.
 * Andrew Kurauchi
 * Luciano Soares
 
+**Professora Auxiliar**
+
+* Bárbara Agena
+
+**NINJAs**
+
+* Evandro Fontana Romeiro (Turma A)
+* Diego Saragoza da Silva (Turma B)
+* Gabriella Escobar Cukier (Turma C)
+
+**Servidor de Exercícios**
+
+Uma conta deve ter sido criada para você usando o seu nome de usuário Insper. Por exemplo, se o seu usuário Insper é `fulano123`, o seu login no servidor será `fulano123` e a sua senha **também** será `fulano123`. **Altere sua senha depois que fizer o primeiro login**.
+
+<h3 class="text-center"><a href="http://softdes.insper.edu.br/" class="md-button md-button--primary">Entrar no Servidor</a></h3>
+
 ## Objetivos de Aprendizagem
 
 Ao final da disciplina o aluno será capaz de:

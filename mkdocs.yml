@@ -30,6 +30,7 @@ nav:
         - 'Turma A': turma-a.md
         - 'Turma B': turma-b.md
         - 'Turma C': turma-c.md
+    - 'Servidor de Exercícios': http://softdes.insper.edu.br/
     - Aulas:
         - '01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções': aulas/01-funcoes.md
         - '02 - Input e String': aulas/02-io.md
