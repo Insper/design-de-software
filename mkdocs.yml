@@ -32,11 +32,13 @@ nav:
     - 'Servidor de Exercícios': http://softdes.insper.edu.br/
     - Aulas:
         - '01 - Introdução ao Python, Variáveis, Operações Matemáticas e Funções':
-            - 'Slides': aulas/01-funcoes/01-slides.pdf
             - 'Handout': aulas/01-funcoes.md
+            - 'Slides': aulas/01-funcoes/01-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=VtNiBiJ60yo
         - '02 - Input e String':
             - 'Handout': aulas/02-io.md
+            - 'Slides': aulas/02-io/02-slides.pdf
+            - 'Vídeo': https://youtu.be/vNhvNjJ32oc
         - '03 - Desvios Condicionais (if)':
             - 'Handout': aulas/03-if.md
         - '04 - Laços de Repetição (while)':
