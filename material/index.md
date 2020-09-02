@@ -15,7 +15,7 @@ Bem vindo ao curso de Design de Software 2020/2.
 
 * Evandro Fontana Romeiro (Turma A)
 * Diego Saragoza da Silva (Turma B)
-* Gabriella Escobar Cukier (Turma C)
+* Gabriella Escobar Cukier (Turmas A e B)
 
 **Servidor de Exercícios**
 
