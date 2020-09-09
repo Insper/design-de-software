@@ -45,22 +45,31 @@ nav:
             - 'Vídeo': https://www.youtube.com/watch?v=rI40ujoXpeQ
         - '04 - Laços de Repetição (while)':
             - 'Handout': aulas/04-while.md
+            - 'Slides': aulas/04-while/04-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=rHOkYSMjj18
         - '05 - Listas':
             - 'Handout': aulas/05-listas.md
+            - 'Slides': aulas/05-listas/05-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=ZA_cfIZW1pA
         - '06 - For':
             - 'Handout': aulas/06-for.md
+            - 'Slides': aulas/06-for/06-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=UC5TY403DrE
         - '07 - Dicionários':
             - 'Handout': aulas/07-dicionarios.md
+            - 'Slides': aulas/07-dicionarios/07-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=lSDhCUIPg38
         - '08 - Strings e Fatiamento':
             - 'Handout': aulas/08-strings.md
+            - 'Slides': aulas/08-strings/08-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=jkH1ICesA9A
         - '09 - Arquivos':
             - 'Handout': aulas/09-arquivos.md
+            - 'Slides': aulas/09-arquivos/09-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=evKHVN8gcz8
+        - '10 - Orientação a Objetos':
+            - 'Slides': aulas/10-oo/10-slides.pdf
+            - 'Vídeo': https://www.youtube.com/watch?v=27xvt8_WTug
     - Projeto:
         - 'Handout': aulas/10-pygame.md
         - 'Vídeos':
