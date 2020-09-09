@@ -41,6 +41,8 @@ nav:
             - 'Vídeo': https://youtu.be/vNhvNjJ32oc
         - '03 - Desvios Condicionais (if)':
             - 'Handout': aulas/03-if.md
+            - 'Slides': aulas/03-if/03-slides.pdf
+            - 'Vídeo': https://www.youtube.com/watch?v=rI40ujoXpeQ
         - '04 - Laços de Repetição (while)':
             - 'Handout': aulas/04-while.md
             - 'Vídeo': https://www.youtube.com/watch?v=rHOkYSMjj18
