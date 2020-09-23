@@ -70,6 +70,7 @@ nav:
         - '10 - Orientação a Objetos':
             - 'Slides': aulas/10-oo/10-slides.pdf
             - 'Vídeo': https://www.youtube.com/watch?v=27xvt8_WTug
+    - EP: ep.md
     - Projeto:
         - 'Handout': aulas/10-pygame.md
         - 'Vídeos':
