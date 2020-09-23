@@ -1,6 +1,6 @@
 # Exercício Programa: Bacará Simplificado
 
-**Data de entrega: 06/10/2020, via GitHub**
+**Data de entrega: 18/10/2020, via GitHub**
 
 **Este trabalho pode ser feito individualmente ou em duplas**
 
@@ -89,8 +89,8 @@ Soma $7$:
 O jogador perde as fichas apostadas se não tiver apostado no vencedor. Caso contrário, a quantidade de fichas recebidas depende de quem foi o vencedor da partida:
 
 - **Jogador**: se o jogador venceu a partida (obteve a soma mais próxima de 9), a mesa paga a mesma quantidade de fichas apostadas. Por exemplo, se o jogador apostou 10 fichas, ele receberá outras 10 fichas.
-- **Banco**: se o banco venceu a partida, a mesa paga 95% das fichas apostadas. Por exemplo, se o jogador apostou 20 fichas, ele receberá outras 19. Caso o numero não seja inteiro o jogador receberá as fichas sempre arredondando para baixo. Por exemplo, se o jogador apostou 25 fichar, ele vai receber só 23 a mais.
-- **Empate**: se ocorreu um empate, e o jogador apostou no empate, a mesa paga 8 vezes a quantidade de fichas apostadas. Por exemplo, se o jogador apostou 10 fichas, ele receberá outras 80.0
+- **Banco**: se o banco venceu a partida, a mesa paga 95% das fichas apostadas. Por exemplo, se o jogador apostou 20 fichas, ele receberá outras 19. Caso o número não seja inteiro o jogador receberá as fichas sempre arredondando para baixo. Por exemplo, se o jogador apostou 25 fichas, ele vai receber só 23 a mais.
+- **Empate**: se ocorreu um empate, e o jogador apostou no empate, a mesa paga 8 vezes a quantidade de fichas apostadas. Por exemplo, se o jogador apostou 10 fichas, ele receberá outras 80.
 
 ### Mais exemplos
 
