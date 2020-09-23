@@ -13,3 +13,13 @@
     min-width: 100%;
   }
 }
+
+.cardset {
+  display: flex;
+  justify-content: center;
+}
+
+.cardset .card {
+  max-width: 100px;
+  margin: 0 10px;
+}
