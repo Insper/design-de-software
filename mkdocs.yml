@@ -90,6 +90,7 @@ nav:
         - 'Navegando pelo terminal':
             - 'Windows': tutoriais/terminal-win.md
             - 'macOS': tutoriais/terminal-macos.md
+        - 'Apostila de Git': git.pdf
     - Dicas:
         - 'Buscando Ajuda': dicas/buscando-ajuda.md
 
