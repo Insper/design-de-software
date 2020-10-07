@@ -44,16 +44,15 @@ A avaliação da disciplina será composta por provas, exercícios programa (EP)
 Os pesos de cada instrumento de avaliação é apresentado a seguir:
 
 * Nota Individual (NI): provas compostas por exercícios práticos de programação;
-    * [10%] Quiz
-    * [40%] Prova Intermediária (PI)
-    * [50%] Prova Final (PF)
+    * [50%] Prova Intermediária (PI)
+    * [60%] Prova Final (PF)
 
 !!! warning "Prova Substitutiva"
     A prova substitutiva engloba todo o conteúdo e pode ser realizada apenas pelos alunos que não tiverem realizado a PI ou PF.
     **O quiz NÃO possui sub.**
 
 * Nota em Grupo (NG): serão avaliados por rubricas e será atribuído um conceito
-    * [20%] Exercícios Programa (EP): exercícios que integram os conteúdos das aulas. Podem ser feitos em duplas.
+    * [20%] Exercício Programa (EP): exercício que integra os conteúdos das aulas. Pode ser feito em duplas.
     * [80%] Projeto Final: projeto em Python utilizando uma biblioteca gráfica (PyGame) para o desenvolvimento de uma aplicação interativa.
 
 !!! warning "Reprovação por APS"
