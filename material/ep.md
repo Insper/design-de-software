@@ -237,8 +237,6 @@ A regra para a terceira carta do banco depende da soma das suas duas cartas e da
 |       3       | S | S | S | S | S | S | S | S | N | S |
 |       4       | N | N | S | S | S | S | S | S | N | N |
 |       5       | N | N | N | N | S | S | S | S | N | N |
-|       6       | N | N | N | N | N | N | S | S | N | N |
-|       7       | N | N | N | N | N | N | N | N | N | N |
 
 Por exemplo, se a terceira carta do jogador foi 3 e a soma das duas cartas do banco é 5, o banco não recebe a terceira carta. Se a terceira carta do jogador foi 2 e a soma das duas cartas do banco é 4, o banco recebe a terceira carta.
 
