@@ -37,28 +37,9 @@ O [pygame](https://www.pygame.org/docs/) é um *framework* (ou *game engine*) pa
 
 ## Instalação
 
-### Windows e Linux
-
-Abra o seu terminal (Linux) ou Anaconda Prompt (Windows) e digite:
+Abra o seu terminal (Linux ou MacOS) ou Anaconda Prompt (Windows) e digite:
 
     pip install pygame
-
-### Mac OSX
-
-A instalação no Mac é um pouco mais complicada, infelizmente. Se você não tiver o Homebrew instalado, instale-o seguindo as instruções disponíveis neste link (se você não sabe se tem o Homebrew instalado, provavelmente não tem): [https://brew.sh/](https://brew.sh/)
-
-Abra o terminal e digite:
-
-    brew install sdl2 sdl2_gfx sdl2_image sdl2_mixer sdl2_net sdl2_ttf
-    brew install Caskroom/cask/xquartz
-    git clone -b 1.9.6 --single-branch https://github.com/pygame/pygame.git
-    cd pygame
-    python setup.py -config -auto -sdl2
-    python setup.py install
-    cd ..
-    rm -rf pygame
-
-Para mais detalhes e outras opções de instalação no Mac, consulte a documentação: [https://www.pygame.org/wiki/MacCompile](https://www.pygame.org/wiki/MacCompile)
 
 ## Preparo para o tutorial
 
