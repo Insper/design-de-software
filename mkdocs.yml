@@ -86,7 +86,7 @@ nav:
             - 'Exemplo PyGame 9': https://www.youtube.com/watch?v=jZmCRmAQlzE
             - 'Exemplo PyGame 10': https://www.youtube.com/watch?v=sdurCruVfsQ
             - 'git e Github': https://www.youtube.com/watch?v=xZI0BytK5GA
-        - 'Rubrica'
+        - 'Rubrica': projeto/rubrica
     - Tutoriais:
         - 'Navegando pelo terminal':
             - 'Windows': tutoriais/terminal-win.md
