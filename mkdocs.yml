@@ -73,6 +73,7 @@ nav:
     - EP: ep.md
     - Projeto:
         - 'Handout': aulas/10-pygame.md
+        - 'Exemplos de código': https://github.com/insper/pygame-snippets
         - 'Vídeos':
             - 'Classes': https://www.youtube.com/watch?v=27xvt8_WTug
             - 'Exemplo PyGame 1': https://www.youtube.com/watch?v=bH-Js1Eao50
